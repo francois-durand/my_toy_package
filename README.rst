@@ -163,6 +163,18 @@ In the PyCharm terminal:
 
 #. ``pip install -r requirements_dev.txt``
 
+Install Your Package in "Development Mode"
+==========================================
+
+This way, your package behaves as if it were installed, but any change you make will have effect immediately.
+In the PyCharm terminal, you should still be in the directory of your package, with your virtual environment activated.
+Do::
+
+    python setup.py develop
+
+
+
+
 -------
 Credits
 -------

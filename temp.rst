@@ -8,14 +8,6 @@
 
 
 
-\subsection{Install Your Package in "Development Mode"}
-
-This way, your package behaves as if it were installed, but any change you make will have effect immediately.
-
-In PyCharm terminal, ensure that your virtual environment is still activated and that you are in the main directory of your project. Then:
-\begin{center}
-\verb|python setup.py develop|
-\end{center}
 
 \subsection{Set Up Travis CI}
 
