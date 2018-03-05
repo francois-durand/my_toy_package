@@ -1,17 +1,5 @@
 
 
-\subsection{Generate Your Package}
-
-First, check that the name of your package is not used in PyPI.
-
-In a terminal (e.g. Anaconda Prompt):
-\begin{enumerate}
-\item Go to your GitHub directory.
-\item \verb|cookiecutter https://github.com/audreyr/cookiecutter-pypackage.git|
-\end{enumerate}
-
-Answer the questions. Here is an example (some explanations follow).
-
 \begin{verbatim}
 full_name [Audrey Roy Greenfeld]: François Durand
 email [aroy@alum.mit.edu]: fradurand@gmail.com
@@ -48,6 +36,8 @@ Choose from 1, 2, 3, 4, 5, 6 [1]: 5
 \item \verb|Click|: this allows you to easily call your program with unix-style command, e.g. \verb|python my_program.py --help|. I'd say yes (even if you do not use it for the moment).
 \item \verb|create_author_file|: answer yes.
 \end{enumerate}
+
+
 
 \subsection{Create the PyCharm Project}
 
