@@ -255,7 +255,7 @@ Set Up Pyup
 Add the Example Files
 =====================
 
-#. On GitHub website, clone or download `this GitHub repository`_.
+#. On GitHub website, clone or download my_toy_package_.
 #. In a terminal or file explorer:
 
     #. Copy the directories ``my_toy_package\my_toy_package\SubPackage1`` and ``my_toy_package\my_toy_package\SubPackage2``
@@ -277,7 +277,7 @@ Add the Example Files
     #. In the file ``setup.py``, remove the two lines about Python 2 (unless you plan to write code that is compatible
        with Python 2).
 
-_`this GitHub repository`: https://github.com/francois-durand/my_toy_package
+_my_toy_package: https://github.com/francois-durand/my_toy_package
 
 -------
 Credits
