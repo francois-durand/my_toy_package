@@ -151,6 +151,16 @@ In PyCharm:
 
 In a browser, you can go to your GitHub account to check that everything is there.
 
+Install Dev Requirements
+========================
+
+#. Open the PyCharm terminal and ensure you are in the directory of your package (e.g. ``D:\GitHub\my_toy_package``).
+#. Ensure that your virtual environment is activated: there should be ``(venv)`` at the beginning of the line. If not::
+
+    venv\Scripts\activate
+
+#. ``pip install -r requirements_dev.txt``
+
 -------
 Credits
 -------

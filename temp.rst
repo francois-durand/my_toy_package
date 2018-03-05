@@ -7,17 +7,6 @@
 
 
 
-\subsection{Install Dev Requirements}
-
-\begin{enumerate}
-\item Open the PyCharm terminal and ensure you are in the directory of your package (e.g. \verb|D:\GitHub\my_toy_package|).
-\item Ensure that your virtual environment is activated: there should be \verb|(venv)| at the beginning of the line. If not:
-\begin{verbatim}
-venv\Scripts\activate
-\end{verbatim}
-%\item \verb|pip install cryptography| (apparently, this step is not necessary anymore)
-\item \verb|pip install -r requirements_dev.txt|
-\end{enumerate}
 
 \subsection{Install Your Package in "Development Mode"}
 
