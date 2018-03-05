@@ -228,12 +228,29 @@ On ReadTheDocs website:
     #. Check "Installer votre projet dans un virtualenv via setup.py install".
     #. In "Python interpreter", choose "CPython 3.x".
 
-In PyCharm, commit/push:
+In PyCharm, commit/push, i.e.:
 
 #. Menu VCS -> Commit.
 #. Enter a commit message, e.g. ``Initial settings``.
 #. Commit -> Commit and push.
 #. Push.
+
+Set Up Pyup
+===========
+
+On Pyup website:
+
+#. Click on the green *Add Repo* button and select the repo you created.
+#. A pop up appears. Personally, I checked the first item and unchecked the two others.
+
+Within a few minutes, you will probably receive a pull request in GitHub (and in your email). On GitHub website:
+
+#. Accept merge.
+#. Delete branch.
+
+In PyCharm:
+
+#. Menu VCS -> Update project. This does a git update (to get the modifications done by Pyup).
 
 -------
 Credits

@@ -15,16 +15,6 @@
 
 
 
-\subsection{Set Up Pyup}
-
-Log into your account at pyup.io.
-
-\begin{enumerate}
-\item Click on the green Add Repo button and select the repo you created.
-\item A pop up appears. Personally, I checked the first item and unchecked the two others.
-\item Within a few minutes, you will probably receive a pull request in GitHub (and in your email). Follow the link, accept merge and delete branch.
-\item In PyCharm, do a git update (to get the modifications done by Pyup): VCS $\to$ Update project.
-\end{enumerate}
 
 \subsection{Add the Example Files}
 
