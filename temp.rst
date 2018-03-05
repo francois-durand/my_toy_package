@@ -6,17 +6,6 @@
 
 
 
-\subsection{Create the GitHub Repo}
-
-\begin{enumerate}
-\item Register your GitHub account in PyCharm: Menu File $\to$ Settings $\to$ Version Control $\to$ GitHub. Choose Auth type $\to$ password. Fill in the form and validate.
-\item Menu VCS $\to$ Import into version control $\to$ Share project on GitHub. Fill in the form and validate, e.g.:
-\begin{center}
-\includegraphics[width=7cm]{share_on_github}
-\end{center}
-\end{enumerate}
-
-In a browser, you can go to your GitHub account to check that everything is there.
 
 \subsection{Install Dev Requirements}
 

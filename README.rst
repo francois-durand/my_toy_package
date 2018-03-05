@@ -130,6 +130,27 @@ In PyCharm:
 
     #. Check that ``venv`` is also excluded.
 
+Create the GitHub Repo
+======================
+
+In PyCharm:
+
+#. If it is not already done, register your GitHub account in PyCharm:
+
+    #. Menu File -> Settings -> Version Control -> GitHub.
+    #. Choose Auth type -> password.
+    #. Fill in the form and validate.
+
+#. Menu VCS -> Import into version control -> Share project on GitHub.
+
+#. Fill in the form and validate, e.g.::
+
+    New repository name: my_toy_package
+    Remote name: origin
+    Description: My Toy Package shows how to use cookiecutter.
+
+In a browser, you can go to your GitHub account to check that everything is there.
+
 -------
 Credits
 -------
