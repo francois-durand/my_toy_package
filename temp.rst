@@ -1,21 +1,9 @@
 
 
 
+$\to$ Project $\to$ Project Interpreter. Check that your virtual environment is here. If not, click on the gear $\to$ Add local, and fill in the form.
 
-
-
-\subsection{Create the PyCharm Project}
-
-Open PyCharm.
-
-\begin{enumerate}
-\item Create new project.
-\item In ``Location'', fetch the directory of your project. Fill in the form:
-\begin{center}
-\includegraphics[width=13cm]{pycharm_new_project}
-\end{center}
-\item Warning that the directory is not empty: validate.
-\item Menu File $\to$ Settings $\to$ Project $\to$ Project Interpreter. Check that your virtual environment is here. If not, click on the gear $\to$ Add local, and fill in the form.
+\item
 \item In the file \verb|.gitignore|:
 \begin{enumerate}
 \item Add these lines:
@@ -26,6 +14,9 @@ Open PyCharm.
 \item Check that \verb|venv| is also excluded.
 \end{enumerate}
 \end{enumerate}
+
+
+
 
 \subsection{Create the GitHub Repo}
 

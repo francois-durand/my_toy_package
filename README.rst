@@ -99,7 +99,7 @@ Generate Your Package
 
 Some explanations now:
 
-* ``use_pytest``: There are essentially three ways to do unit tests in Python: unittest (the standard solution),
+* ``use_pytest``: there are essentially three ways to do unit tests in Python: unittest (the standard solution),
   pytest (another test package) and doctest (where tests are integrated in the docstrings). If you are new to
   testing, I suggest using doctest. But even so, pytest is useful to configure your tests (as we will do a bit
   later). For this reason, my advice is to answer yes.
@@ -108,7 +108,18 @@ Some explanations now:
 * ``add_pyup_badge``: a pyup badge will appear in the readme of your package.
 * ``Click``: this allows you to easily call your program with unix-style command, e.g. ``python my_program.py --help``
   You can answer yes, even if you do not use it for the moment.
-* create_author_file: answer yes.
+* ``create_author_file``: I suggest to answer yes.
+
+Create the PyCharm Project
+==========================
+
+In PyCharm:
+
+#. Create new project.
+#. In ``Location'', fetch the directory of your project, e.g. ``D:\GitHub\my_toy_package``. Validate.
+#. Warning that the directory is not empty: validate.
+#. Menu File -> Settings
+
 
 -------
 Credits
