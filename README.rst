@@ -252,6 +252,33 @@ Set Up Pyup
 
 #. In PyCharm, menu VCS -> Update project. This does a git update (to get the modifications done by Pyup).
 
+Add the Example Files
+=====================
+
+#. On GitHub website, clone or download `this GitHub repository`_.
+#. In a terminal or file explorer:
+
+    #. Copy the directories ``my_toy_package\my_toy_package\SubPackage1`` and ``my_toy_package\my_toy_package\SubPackage2``
+       and paste them into the corresponding places in your project.
+    #. Copy the file ``my_toy_package\docs\reference`` and paste it into the corresponding place in your project.
+
+#. In PyCharm:
+
+    #. In the file ``MyClass1``, replace ``my_toy_package`` with the name of your package.
+    #. Manually modify the copyright statement in files ``MyClass1``, ``MyClass2`` and ``MyClass3``.
+    #. In the file ``reference``, replace ``my_toy_package`` with the name of your package.
+    #. In the file ``index.rst``, just after the line ``usage``, add ``reference``.
+    #. In the file ``__init__.py``, add the following shortcuts::
+
+        from .SubPackage1.MyClass1 import MyClass1
+        from .SubPackage2.MyClass2 import MyClass2
+        from .SubPackage2.MyClass3 import MyClass3.
+
+    #. In the file ``setup.py``, remove the two lines about Python 2 (unless you plan to write code that is compatible
+       with Python 2).
+
+_`this GitHub repository`: https://github.com/francois-durand/my_toy_package
+
 -------
 Credits
 -------

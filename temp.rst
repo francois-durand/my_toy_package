@@ -16,24 +16,6 @@
 
 
 
-\subsection{Add the Example Files}
-
-\begin{enumerate}
-\item Copy the contents of the directory \verb|myproject| (provided with this tutorial) into e.g. \verb|my_toy_package\my_toy_package|. % Two directories MySubPackage1 and MySubPackage2
-\begin{enumerate}
-\item Manually modify the copyright statement in each file.
-\item In \verb|MyClass1|, replace \verb|my_toy_package| with the name of your package.
-\end{enumerate}
-\item Copy the contents of the directory \verb|docs| (provided with this tutorial) into e.g. \verb|my_toy_package\docs|. In the file \verb|reference|, replace \verb|my_toy_project| with the name of your package.% File reference
-\item In the file \verb|index.rst|, add \verb|reference|, for example just after the line \verb|usage|.
-\item In the file \verb|my_toy_package\my_toy_package\__init__.py|, add the following shortcuts:
-\begin{verbatim}
-from .SubPackage1.MyClass1 import MyClass1
-from .SubPackage2.MyClass2 import MyClass2
-from .SubPackage2.MyClass3 import MyClass3
-\end{verbatim}
-\item In the file \verb|setup.py|, remove the lines about Python 2 (unless you plan to write code that is compatible with Python 2).
-\end{enumerate}
 
 \subsection{Add a Run Configuration for Doctest}
 
