@@ -8,6 +8,7 @@ Welcome to My Toy Package's documentation!
    readme
    installation
    usage
+   reference
    modules
    contributing
    authors
