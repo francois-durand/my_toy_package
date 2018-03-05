@@ -22,7 +22,7 @@ from my_toy_package.SubPackage2.MyClass2 import MyClass2
 
 
 class MyClass1:
-    """A whatever-you-are-doing (new tests).
+    """A whatever-you-are-doing.
 
     :param a: the `a` of the system. Must be nonnegative.
     :param b: the `b` of the system.
