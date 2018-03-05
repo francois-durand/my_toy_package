@@ -1,7 +1,4 @@
-In a terminal (e.g. Anaconda Prompt):
-\begin{center}
-\verb|pip install cookiecutter| (or \verb|easy_install cookiecutter|)
-\end{center}
+
 
 \subsection{Generate Your Package}
 

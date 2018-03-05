@@ -29,7 +29,7 @@ Cookiecutter, by Audrey Roy Greenfeld, and PyCharm.
 Create your package
 -------------------
 
-Main source: https://cookiecutter-pypackage.readthedocs.io/en/latest/tutorial.html .
+This section is adapted from: https://cookiecutter-pypackage.readthedocs.io/en/latest/tutorial.html .
 
 Preliminaries
 =============
@@ -51,6 +51,10 @@ Ensure that you have accounts (preferably with the same login) on:
 Install Cookiecutter
 ====================
 
+In a terminal (e.g. Anaconda Prompt), do one of the following::
+
+    pip install cookiecutter
+    easy_install cookiecutter
 
 
 
