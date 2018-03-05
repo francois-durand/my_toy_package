@@ -1,39 +1,6 @@
 
 
-\begin{verbatim}
-github_username [audreyr]: francois-durand
-project_name [Python Boilerplate]: My Toy Package
-project_slug [my_toy_package]:
-project_short_description [Python Boilerplate contains all the boilerplate
-you need to create a Python package.]: My Toy Package shows how to use
-Cookiecutter.
-pypi_username [francois-durand]:
-version [0.1.0]:
-use_pytest [n]: y
-use_pypi_deployment_with_travis [y]:
-add_pyup_badge [n]: y
-Select command_line_interface:
-1 - Click
-2 - No command-line interface
-Choose from 1, 2 [1]:
-create_author_file [y]:
-Select open_source_license:
-1 - MIT license
-2 - BSD license
-3 - ISC license
-4 - Apache Software License 2.0
-5 - GNU General Public License v3
-6 - Not open source
-Choose from 1, 2, 3, 4, 5, 6 [1]: 5
-\end{verbatim}
 
-\begin{enumerate}
-\item \verb|use_pytest|: answer yes, even if you plan to use doctest.
-\item \verb|use_pypi_deployment_with_travis|: answer yes.
-\item \verb|add_pyup_badge|: answer yes.
-\item \verb|Click|: this allows you to easily call your program with unix-style command, e.g. \verb|python my_program.py --help|. I'd say yes (even if you do not use it for the moment).
-\item \verb|create_author_file|: answer yes.
-\end{enumerate}
 
 
 
