@@ -1,19 +1,7 @@
 
 
 
-$\to$ Project $\to$ Project Interpreter. Check that your virtual environment is here. If not, click on the gear $\to$ Add local, and fill in the form.
 
-\item
-\item In the file \verb|.gitignore|:
-\begin{enumerate}
-\item Add these lines:
-\begin{verbatim}
-# PyCharm project settings
-.idea
-\end{verbatim}
-\item Check that \verb|venv| is also excluded.
-\end{enumerate}
-\end{enumerate}
 
 
 
