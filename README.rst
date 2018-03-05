@@ -62,9 +62,10 @@ Or, if you prefer::
 Generate Your Package
 =====================
 
-#. Your project will have a name (e.g. *My Toy Package*) and a project slug (typically `my_toy_package`).
+#. Your project will need a project name (e.g. *My Toy Package*) and a project slug (typically `my_toy_package`).
    Before starting, check that your project slug is not used in PyPI.
 #. In a terminal (e.g. Anaconda Prompt):
+
    #. Go to your GitHub directory, e.g. `D:\GitHub\`.
    #. :: cookiecutter https://github.com/audreyr/cookiecutter-pypackage.git
    #. Answer the questions. Here is an example (some explanations follow).
