@@ -116,10 +116,10 @@ Create the PyCharm Project
 In PyCharm:
 
 #. Create new project.
-#. In ``Location'', fetch the directory of your project, e.g. ``D:\GitHub\my_toy_package``. Validate.
+#. In *Location*, fetch the directory of your project, e.g. ``D:\GitHub\my_toy_package``. Validate.
 #. Warning that the directory is not empty: validate.
 #. Menu File -> Settings -> Project -> Project Interpreter.
-#. Click on the gear -> Add local
+#. Click on the gear -> Add local.
 #. Fill in the form: New environment using Virtualenv. This directory proposed is just fine. Validate.
 #. Open the file ``.gitignore`` (you can do so in PyCharm).
 
