@@ -66,9 +66,9 @@ Generate Your Package
    Before starting, check that your project slug is not used in PyPI.
 #. In a terminal (e.g. Anaconda Prompt):
 
-   #. Go to your GitHub directory, e.g. ``D:\GitHub\``.
-   #. ``cookiecutter https://github.com/audreyr/cookiecutter-pypackage.git``
-   #. Answer the questions. Here is an example (some explanations follow)::
+    #. Go to your GitHub directory, e.g. ``D:\GitHub\``.
+    #. ``cookiecutter https://github.com/audreyr/cookiecutter-pypackage.git``
+    #. Answer the questions. Here is an example (some explanations follow)::
 
         full_name [Audrey Roy Greenfeld]: François Durand
         email [aroy@alum.mit.edu]: fradurand@gmail.com
