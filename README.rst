@@ -243,14 +243,14 @@ On Pyup website:
 #. Click on the green *Add Repo* button and select the repo you created.
 #. A pop up appears. Personally, I checked the first item and unchecked the two others.
 
-Within a few minutes, you will probably receive a pull request in GitHub (and in your email). On GitHub website:
+Within a few minutes, you will probably receive a pull request in GitHub (and in your email).
+
+On GitHub website:
 
 #. Accept merge.
 #. Delete branch.
 
-In PyCharm:
-
-#. Menu VCS -> Update project. This does a git update (to get the modifications done by Pyup).
+In PyCharm, menu VCS -> Update project. This does a git update (to get the modifications done by Pyup).
 
 -------
 Credits
