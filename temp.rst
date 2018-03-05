@@ -1,8 +1,6 @@
 
 
 \begin{verbatim}
-full_name [Audrey Roy Greenfeld]: François Durand
-email [aroy@alum.mit.edu]: fradurand@gmail.com
 github_username [audreyr]: francois-durand
 project_name [Python Boilerplate]: My Toy Package
 project_slug [my_toy_package]:
