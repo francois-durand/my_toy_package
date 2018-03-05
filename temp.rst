@@ -13,31 +13,7 @@
 
 
 
-\subsection{Set Up ReadTheDocs}
 
-Log into your account at ReadTheDocs.
-
-\begin{enumerate}
-\item Paramètres $\to$ Comptes liés. Check that your GitHub account is listed here.
-\item Go to “My Projects”. Import a Project $\to$ Importer manuellement. Fill in the form and validate, e.g.:
-\begin{verbatim}
-my_toy_package
-https://github.com/francois-durand/my_toy_package
-Git
-\end{verbatim}
-\item Admin $\to$ Advanced settings.
-\begin{enumerate}
-\item Check "Installer votre projet dans un virtualenv via setup.py install".
-\item In "Python interpreter", choose "CPython 3.x"
-\end{enumerate}
-\item In PyCharm, do a commit/push:
-\begin{enumerate}
-\item Menu VCS $\to$ Commit.
-\item Enter a commit message, e.g. \verb|Initial settings|.
-\item Commit $\to$ Commit and push.
-\item Push.
-\end{enumerate}
-\end{enumerate}
 
 \subsection{Set Up Pyup}
 

@@ -211,6 +211,30 @@ Once Travis CLI is installed:
     #. Check that ``deploy.password.secure`` is encoded.
     #. Suppress the line ``- 2.7`` (unless you plan to write code that is compatible with Python 2.7).
 
+Set Up ReadTheDocs
+==================
+
+On ReadTheDocs website:
+
+#. Paramètres -> Comptes liés. Check that your GitHub account is listed here.
+#. Go to “My Projects”. Import a Project -> Importer manuellement. Fill in the form and validate, e.g.::
+
+    my_toy_package
+    https://github.com/francois-durand/my_toy_package
+    Git
+
+#. Admin -> Advanced settings.
+
+    #. Check "Installer votre projet dans un virtualenv via setup.py install".
+    #. In "Python interpreter", choose "CPython 3.x".
+
+In PyCharm, commit/push:
+
+#. Menu VCS -> Commit.
+#. Enter a commit message, e.g. ``Initial settings``.
+#. Commit -> Commit and push.
+#. Push.
+
 -------
 Credits
 -------
