@@ -172,8 +172,44 @@ Do::
 
     python setup.py develop
 
+Set Up Travis CI
+================
 
+Ensure that Travis CLI is installed on your computer.
 
+* Under Windows:
+
+    #. Install Ruby (https://rubyinstaller.org/ ).
+    #. In PyCharm terminal, do: ``gem install -V travis --no-rdoc --no-ri``.
+
+* Under Debian, run as root::
+
+    apt-get update
+    apt-get install cookie-cutter ruby ruby-dev gcc
+    gem install -V travis --no-rdoc --no-ri
+
+If you experience troubles installing travis, cf. https://github.com/travis-ci/travis.rb#installation.
+
+Once Travis CLI is installed:
+
+#. On Travis website:
+
+    #. Login using your Github credentials.
+    #. It may take a few minutes for Travis CI to load up a list of all your GitHub repos. They will be listed with
+       boxes to the left of the repo name, where the boxes have an X in them, meaning it is not connected to Travis CI.
+       Add the public repo to your Travis CI account by clicking the X to switch it “on” in the box next to the
+       ``my_toy_package`` repo. Do not try to follow the other instructions, that will be taken care of next.
+
+#. In PyCharm terminal, ensure that you are in the directory of your project and::
+
+    travis encrypt --add deploy.password "My PyPI password"
+
+   (replace with your actual password, in quotation marks).
+
+#. Open the file ``.travis.yml`` (you can do so in PyCharm).
+
+    #. Check that ``deploy.password.secure`` is encoded.
+    #. Suppress the line ``- 2.7`` (unless you plan to write code that is compatible with Python 2.7).
 
 -------
 Credits

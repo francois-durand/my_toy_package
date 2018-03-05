@@ -9,36 +9,6 @@
 
 
 
-\subsection{Set Up Travis CI}
-
-Ensure that Travis CLI is installed on your computer. If not, cf. \url{https://github.com/travis-ci/travis.rb#installation}. On Windows:
-\begin{enumerate}
-\item Install Ruby (\url{https://rubyinstaller.org/}).
-\item In PyCharm terminal:
-\begin{verbatim}
-gem install -V travis --no-rdoc --no-ri
-\end{verbatim}
-\end{enumerate}
-
-Once Travis CLI is installed:
-\begin{enumerate}
-\item On Travis website:
-\begin{enumerate}
-\item Login using your Github credentials.
-\item It may take a few minutes for Travis CI to load up a list of all your GitHub repos. They will be listed with boxes to the left of the repo name, where the boxes have an X in them, meaning it is not connected to Travis CI. Add the public repo to your Travis CI account by clicking the X to switch it “on” in the box next to the \verb|my_toy_package| repo. Do not try to follow the other instructions, that will be taken care of next.
-\end{enumerate}
-\item In PyCharm terminal, ensure that you are in the directory of your project and :
-\begin{verbatim}
-travis encrypt --add deploy.password "My PyPI password"
-\end{verbatim}
-(replace with your actual password, in quotation marks).
-\item In the file \verb|.travis.yml|:
-\begin{enumerate}
-\item Check that \verb|deploy.password.secure| is encoded.
-\item Suppress the line \verb|  - 2.7| (unless you plan to write code that is compatible with Python 2.7).
-\end{enumerate}
-\end{enumerate}
-
 
 
 
