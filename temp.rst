@@ -17,19 +17,6 @@
 
 
 
-\subsection{Add a Run Configuration for Doctest}
-
-In PyCharm:
-\begin{enumerate}
-%\item pip install -U pytest  % Necessary?
-\item Menu Run $\to$ Edit Configurations.
-\item Add a new configuration by clicking the + button $\to$ Python tests $\to$ py.test.
-\item Give a name to the configuration, e.g. \verb|All tests| .
-\item In ``Additional Arguments field'', add \verb|--doctest-modules| .
-\item Ignore the warning and validate.
-\end{enumerate}
-
-Run this configuration: normally, it runs all the doctests of the project.
 
 \subsection{Check that Everything is Working}
 
