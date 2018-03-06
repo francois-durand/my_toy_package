@@ -333,8 +333,9 @@ In PyCharm:
    * ``bumpversion major`` (version x.y.z -> x+1.0.0) when you changed the API. Note: in versions 0.y.z, the API is not
      expected to be stable anyway.
 
-#. Commit/push.
-#. Menu VCS -> Git -> Tag. Add a tag name and validate.
+#. Commit.
+#. Menu VCS -> Git -> Tag. Add a tag name (e.g. ``v0.1.0``) and a message (e.g. ``First stable version``).
+#. Push. The box *Push tags* must be ticked.
 
 After a few minutes, Travis CI has finished the built and it is deployed on PyPI.
 
