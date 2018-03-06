@@ -342,11 +342,11 @@ In PyCharm:
 #. Update the file ``HISTORY.rst``.
 #. In PyCharm terminal, do one of the following:
 
+   * ``bumpversion patch`` (version x.y.z -> x.y.(z+1)) when you made a backwards-compatible modification (such as a
+     bug fix).
+   * ``bumpversion minor`` (version x.y.z -> x.(y+1).0) when you added a functionality.
    * ``bumpversion major`` (version x.y.z -> x+1.0.0) when you changed the API. Note: in versions 0.y.z, the API is not
      expected to be stable anyway.
-   * ``bumpversion patch`` (version x.y.z -> x.y.(z+1)) when you added a functionality,
-   * ``bumpversion minor`` (version x.y.z -> x.(y+1).0) when you made a backwards-compatible modification (such as a
-     bug fix),
 
 #. Commit/push.
 #. Menu VCS -> Git -> Tag. Add a tag name and validate.
