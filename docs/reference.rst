@@ -5,14 +5,14 @@ Reference
 A Nice Section
 --------------
 
-.. autoclass:: my_toy_project.MyClass1
+.. autoclass:: my_toy_package.MyClass1
     :members:
 
 Another Nice Section
 --------------------
 
-.. autoclass:: my_toy_project.MyClass2
+.. autoclass:: my_toy_package.MyClass2
     :members:
 
-.. autoclass:: my_toy_project.MyClass3
+.. autoclass:: my_toy_package.MyClass3
     :members:
