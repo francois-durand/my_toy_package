@@ -276,8 +276,10 @@ Add the Example Files
          from .SubPackage2.MyClass2 import MyClass2
          from .SubPackage2.MyClass3 import MyClass3
 
-   #. In the file ``setup.py``, remove the two lines about Python 2 (unless you plan to write code that is compatible
-      with Python 2).
+   #. In the file ``setup.py``:
+
+      #. Remove the two lines about Python 2 (unless you plan to write code that is compatible with Python 2).
+      #. Delete the argument of ``find_packages()``.
 
 .. _`My Toy Package`: https://github.com/francois-durand/my_toy_package
 
@@ -333,7 +335,7 @@ In PyCharm:
    * ``bumpversion major`` (version x.y.z → x+1.0.0) when you changed the API. Note: in versions 0.y.z, the API is not
      expected to be stable anyway.
 
-#. Commit.
+#. Commit/push.
 #. Menu VCS → Git → Tag. Add a tag name (e.g. ``v0.1.0``) and a message (e.g. ``First stable version``).
 #. Push. The box *Push tags* must be ticked.
 
