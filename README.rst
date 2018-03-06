@@ -255,15 +255,17 @@ Set Up Pyup
 Add the Example Files
 =====================
 
-#. On GitHub website, clone or download `My Toy Package`_.
+#. On GitHub website, download `My Toy Package`_.
 #. In a terminal or file explorer:
 
-    #. Copy the directories ``my_toy_package\my_toy_package\SubPackage1`` and ``my_toy_package\my_toy_package\SubPackage2``
-       and paste them into the corresponding places in your project.
-    #. Copy the file ``my_toy_package\docs\reference`` and paste it into the corresponding place in your project.
+    #. Move the directories ``my_toy_package\my_toy_package\SubPackage1`` and ``my_toy_package\my_toy_package\SubPackage2``
+       into the corresponding places in your project.
+    #. Move the file ``my_toy_package\docs\reference`` into the corresponding place in your project.
+    #. You can throw away the other files you downloaded.
 
 #. In PyCharm:
 
+    #. Right-click on the files you added. Git -> Add.
     #. In the file ``MyClass1``, replace ``my_toy_package`` with the name of your package.
     #. Manually modify the copyright statement in files ``MyClass1``, ``MyClass2`` and ``MyClass3``.
     #. In the file ``reference``, replace ``my_toy_package`` with the name of your package.
@@ -340,9 +342,11 @@ In PyCharm:
 #. Update the file ``HISTORY.rst``.
 #. In PyCharm terminal, do one of the following:
 
-   * ``bumpversion patch`` (version x.y.z -> x.y.(z+1)),
-   * ``bumpversion minor`` (version x.y.z -> x.(y+1).0),
-   * ``bumpversion major`` (version x.y.z -> x+1.0.0).
+   * ``bumpversion major`` (version x.y.z -> x+1.0.0) when you changed the API. Note: in versions 0.y.z, the API is not
+     expected to be stable anyway.
+   * ``bumpversion patch`` (version x.y.z -> x.y.(z+1)) when you added a functionality,
+   * ``bumpversion minor`` (version x.y.z -> x.(y+1).0) when you made a backwards-compatible modification (such as a
+     bug fix),
 
 #. Commit/push.
 #. Menu VCS -> Git -> Tag. Add a tag name and validate.
@@ -357,4 +361,3 @@ This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypack
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
 .. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
-
