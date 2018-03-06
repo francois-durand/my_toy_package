@@ -293,6 +293,32 @@ In PyCharm:
 
 Run this configuration: normally, it runs all the tests of the project.
 
+Check that Everything is Working
+================================
+
+#. In PyCharm: commit/push.
+#. In Travis CI: go to Current. The build should be a success (it may take several minutes).
+#. In ReadTheDocs:
+
+   #. In *Compilations*, the doc should be *transmis*.
+   #. Open the documentation.
+   #. In the table of contents, click on the first page (e.g. *My Toy Package*). You should have four *badges*:
+
+      #. PyPI: invalid (there will be the version number after your first release).
+      #. Build: passing.
+      #. Docs: passing.
+      #. Pyup: up-to-date.
+
+   #. In the table of contents, click on *Reference*. You should see the doc of your functions.
+
+
+
+
+
+-------------------------------
+During the Life of Your Package
+-------------------------------
+
 
 -------
 Credits

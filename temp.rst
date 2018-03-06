@@ -18,24 +18,7 @@
 
 
 
-\subsection{Check that Everything is Working}
 
-\begin{enumerate}
-\item Commit/push.
-\item Travis CI $\to$ Current. The build should be a success (it may take several minutes).
-\item In ReadTheDocs:
-\begin{enumerate}
-\item In ``Compilations'', the doc should be ``transmis''.
-\item In the first page of the documentation (e.g. "My Toy Package"), you should have four "badges":
-\begin{enumerate}
-\item PyPI: invalid (there will be the version number after your first release).
-\item Build: passing.
-\item Docs: passing.
-\item Pyup: up-to-date.
-\end{enumerate}
-\item In ``Reference'', you should see the doc of your functions.
-\end{enumerate}
-\end{enumerate}
 
 
 
