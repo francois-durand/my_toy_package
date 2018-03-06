@@ -145,9 +145,9 @@ In PyCharm:
 
 #. Fill in the form and validate, e.g.::
 
-   New repository name: my_toy_package
-   Remote name: origin
-   Description: My Toy Package shows how to use cookiecutter.
+      New repository name: my_toy_package
+      Remote name: origin
+      Description: My Toy Package shows how to use cookiecutter.
 
 In a browser, you can go to your GitHub account to check that everything is there.
 
@@ -159,7 +159,7 @@ In the PyCharm terminal:
 #. Ensure you are in the directory of your package (e.g. ``D:\GitHub\my_toy_package``).
 #. Ensure that your virtual environment is activated: there should be ``(venv)`` at the beginning of the line. If not::
 
-   venv\Scripts\activate
+      venv\Scripts\activate
 
 #. ``pip install -r requirements_dev.txt``
 
@@ -219,9 +219,9 @@ Set Up ReadTheDocs
    #. Paramètres -> Comptes liés. Check that your GitHub account is listed here.
    #. Go to “My Projects”. Import a Project -> Importer manuellement. Fill in the form and validate, e.g.::
 
-      my_toy_package
-      https://github.com/francois-durand/my_toy_package
-      Git
+         my_toy_package
+         https://github.com/francois-durand/my_toy_package
+         Git
 
    #. Admin -> Advanced settings.
 
