@@ -274,7 +274,7 @@ Add the Example Files
 
          from .SubPackage1.MyClass1 import MyClass1
          from .SubPackage2.MyClass2 import MyClass2
-         from .SubPackage2.MyClass3 import MyClass3.
+         from .SubPackage2.MyClass3 import MyClass3
 
    #. In the file ``setup.py``, remove the two lines about Python 2 (unless you plan to write code that is compatible
       with Python 2).
