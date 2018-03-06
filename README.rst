@@ -311,14 +311,43 @@ Check that Everything is Working
 
    #. In the table of contents, click on *Reference*. You should see the doc of your functions.
 
-
-
-
+If you wish, you are now ready to release your first version (cf. below).
 
 -------------------------------
 During the Life of Your Package
 -------------------------------
 
+Add a Module (= a File)
+=======================
+
+Typically, this is a file ``SubPackage\MyClass``, containing class ``MyClass``.
+
+#. In the file ``__init__.py``: add the shortcut.
+#. In the file ``reference.rst``: add the auto-documentation.
+
+Use a Third-Party Package
+=========================
+
+For example, you want to use Numpy in your module.
+
+In the file ``setup.py``, in the list ``requirements``, add the name of the package (e.g. ``'numpy``).
+
+Release a Version
+=================
+
+In PyCharm:
+
+#. Update the file ``HISTORY.rst``.
+#. In PyCharm terminal, do one of the following:
+
+   * ``bumpversion patch`` (version x.y.z -> x.y.(z+1)),
+   * ``bumpversion minor`` (version x.y.z -> x.(y+1).0),
+   * ``bumpversion major`` (version x.y.z -> x+1.0.0).
+
+#. Commit/push.
+#. Menu VCS -> Git -> Tag. Add a tag name and validate.
+
+After a few minutes, Travis CI has finished the built and it is deployed on PyPI.
 
 -------
 Credits
