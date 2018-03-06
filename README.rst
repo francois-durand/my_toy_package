@@ -319,21 +319,6 @@ If you wish, you are now ready to release your first version (cf. below).
 During the Life of Your Package
 -------------------------------
 
-Add a Module (= a File)
-=======================
-
-Typically, this is a file ``SubPackage\MyClass``, containing class ``MyClass``.
-
-#. In the file ``__init__.py``: add the shortcut.
-#. In the file ``reference.rst``: add the auto-documentation.
-
-Use a Third-Party Package
-=========================
-
-For example, you want to use Numpy in your module.
-
-In the file ``setup.py``, in the list ``requirements``, add the name of the package (e.g. ``'numpy``).
-
 Release a Version
 =================
 
@@ -352,6 +337,36 @@ In PyCharm:
 #. Menu VCS -> Git -> Tag. Add a tag name and validate.
 
 After a few minutes, Travis CI has finished the built and it is deployed on PyPI.
+
+Add a Module (= a File)
+=======================
+
+Typically, this is a file ``SubPackage\MyClass``, containing class ``MyClass``.
+
+#. In the file ``__init__.py``: add the shortcut.
+#. In the file ``reference.rst``: add the auto-documentation.
+
+Use a Third-Party Package
+=========================
+
+For example, you want to use Numpy in your module.
+
+In the file ``setup.py``, in the list ``requirements``, add the name of the package (e.g. ``'numpy``).
+
+When You Receive a Pull Request from Pyup
+=========================================
+
+#. In GitHub website:
+
+   #. Open the pull request.
+   #. If necessary, wait until Travis CI has finished the build, so that you know there is no problem.
+   #. Merge pull request.
+   #. Confirm merge.
+   #. Delete branch.
+   #. In the front page, you Pyup badge should be up-to-date. If not, this is probably just a matter of time.
+      You can go to the Pyup website, click on the gear -> reload.
+
+#. In PyCharm, Menu VCS -> Update project.
 
 -------
 Credits
