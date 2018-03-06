@@ -118,8 +118,8 @@ In PyCharm:
 #. Create new project.
 #. In *Location*, fetch the directory of your project, e.g. ``D:\GitHub\my_toy_package``. Validate.
 #. Warning that the directory is not empty: validate.
-#. Menu File -> Settings -> Project -> Project Interpreter.
-#. Click on the gear -> Add local.
+#. Menu File → Settings → Project → Project Interpreter.
+#. Click on the gear → Add local.
 #. Fill in the form: New environment using Virtualenv. This directory proposed is just fine. Validate.
 #. Open the file ``.gitignore`` (you can do so in PyCharm).
 
@@ -137,11 +137,11 @@ In PyCharm:
 
 #. If it is not already done, register your GitHub account in PyCharm:
 
-   #. Menu File -> Settings -> Version Control -> GitHub.
-   #. Choose Auth type -> password.
+   #. Menu File → Settings → Version Control → GitHub.
+   #. Choose Auth type → password.
    #. Fill in the form and validate.
 
-#. Menu VCS -> Import into version control -> Share project on GitHub.
+#. Menu VCS → Import into version control → Share project on GitHub.
 
 #. Fill in the form and validate, e.g.::
 
@@ -216,23 +216,23 @@ Set Up ReadTheDocs
 
 #. On ReadTheDocs website:
 
-   #. Paramètres -> Comptes liés. Check that your GitHub account is listed here.
-   #. Go to “My Projects”. Import a Project -> Importer manuellement. Fill in the form and validate, e.g.::
+   #. Paramètres → Comptes liés. Check that your GitHub account is listed here.
+   #. Go to “My Projects”. Import a Project → Importer manuellement. Fill in the form and validate, e.g.::
 
          my_toy_package
          https://github.com/francois-durand/my_toy_package
          Git
 
-   #. Admin -> Advanced settings.
+   #. Admin → Advanced settings.
 
       #. Check "Installer votre projet dans un virtualenv via setup.py install".
       #. In "Python interpreter", choose "CPython 3.x".
 
 #. In PyCharm, commit/push, i.e.:
 
-   #. Menu VCS -> Commit.
+   #. Menu VCS → Commit.
    #. Enter a commit message, e.g. ``Initial settings``.
-   #. Commit -> Commit and push.
+   #. Commit → Commit and push.
    #. Push.
 
 Set Up Pyup
@@ -250,7 +250,7 @@ Set Up Pyup
    #. Accept merge.
    #. Delete branch.
 
-#. In PyCharm, menu VCS -> Update project. This does a git update (to get the modifications done by Pyup).
+#. In PyCharm, menu VCS → Update project. This does a git update (to get the modifications done by Pyup).
 
 Add the Example Files
 =====================
@@ -265,7 +265,7 @@ Add the Example Files
 
 #. In PyCharm:
 
-   #. Right-click on the files you added. Git -> Add.
+   #. Right-click on the files you added. Git → Add.
    #. In the file ``MyClass1``, replace ``my_toy_package`` with the name of your package.
    #. Manually modify the copyright statement in files ``MyClass1``, ``MyClass2`` and ``MyClass3``.
    #. In the file ``reference``, replace ``my_toy_package`` with the name of your package.
@@ -287,8 +287,8 @@ Add a Run Configuration for Doctest
 
 In PyCharm:
 
-#. Menu Run -> Edit Configurations.
-#. Add a new configuration by clicking the + button -> Python tests -> py.test.
+#. Menu Run → Edit Configurations.
+#. Add a new configuration by clicking the + button → Python tests → py.test.
 #. Give a name to the configuration, e.g. ``All tests``.
 #. In *Additional Arguments* field, add ``--doctest-modules``.
 #. Ignore the warning and validate.
@@ -327,14 +327,14 @@ In PyCharm:
 #. Update the file ``HISTORY.rst``.
 #. In PyCharm terminal, do one of the following:
 
-   * ``bumpversion patch`` (version x.y.z -> x.y.(z+1)) when you made a backwards-compatible modification (such as a
+   * ``bumpversion patch`` (version x.y.z → x.y.(z+1)) when you made a backwards-compatible modification (such as a
      bug fix).
-   * ``bumpversion minor`` (version x.y.z -> x.(y+1).0) when you added a functionality.
-   * ``bumpversion major`` (version x.y.z -> x+1.0.0) when you changed the API. Note: in versions 0.y.z, the API is not
+   * ``bumpversion minor`` (version x.y.z → x.(y+1).0) when you added a functionality.
+   * ``bumpversion major`` (version x.y.z → x+1.0.0) when you changed the API. Note: in versions 0.y.z, the API is not
      expected to be stable anyway.
 
 #. Commit.
-#. Menu VCS -> Git -> Tag. Add a tag name (e.g. ``v0.1.0``) and a message (e.g. ``First stable version``).
+#. Menu VCS → Git → Tag. Add a tag name (e.g. ``v0.1.0``) and a message (e.g. ``First stable version``).
 #. Push. The box *Push tags* must be ticked.
 
 After a few minutes, Travis CI has finished the built and it is deployed on PyPI.
@@ -365,9 +365,9 @@ When You Receive a Pull Request from Pyup
    #. Confirm merge.
    #. Delete branch.
    #. In the front page, you Pyup badge should be up-to-date. If not, this is probably just a matter of time.
-      You can go to the Pyup website, click on the gear -> reload.
+      You can go to the Pyup website, click on the gear → reload.
 
-#. In PyCharm, Menu VCS -> Update project.
+#. In PyCharm, Menu VCS → Update project.
 
 -------
 Credits
