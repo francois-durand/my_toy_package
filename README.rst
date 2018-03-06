@@ -53,11 +53,11 @@ Install Cookiecutter
 
 In a terminal (e.g. Anaconda Prompt)::
 
-    pip install cookiecutter
+   pip install cookiecutter
 
 Or, if you prefer::
 
-    easy_install cookiecutter
+   easy_install cookiecutter
 
 Generate Your Package
 =====================
@@ -66,36 +66,36 @@ Generate Your Package
    Before starting, check that your project slug is not used in PyPI.
 #. In a terminal (e.g. Anaconda Prompt):
 
-    #. Go to your GitHub directory, e.g. ``D:\GitHub\``.
-    #. ``cookiecutter https://github.com/audreyr/cookiecutter-pypackage.git``
-    #. Answer the questions. Here is an example (some explanations follow)::
+   #. Go to your GitHub directory, e.g. ``D:\GitHub\``.
+   #. ``cookiecutter https://github.com/audreyr/cookiecutter-pypackage.git``
+   #. Answer the questions. Here is an example (some explanations follow)::
 
-        full_name [Audrey Roy Greenfeld]: François Durand
-        email [aroy@alum.mit.edu]: fradurand@gmail.com
-        github_username [audreyr]: francois-durand
-        project_name [Python Boilerplate]: My Toy Package
-        project_slug [my_toy_package]:
-        project_short_description [Python Boilerplate contains all the boilerplate
-        you need to create a Python package.]: My Toy Package shows how to use
-        Cookiecutter.
-        pypi_username [francois-durand]:
-        version [0.1.0]:
-        use_pytest [n]: y
-        use_pypi_deployment_with_travis [y]:
-        add_pyup_badge [n]: y
-        Select command_line_interface:
-        1 - Click
-        2 - No command-line interface
-        Choose from 1, 2 [1]:
-        create_author_file [y]:
-        Select open_source_license:
-        1 - MIT license
-        2 - BSD license
-        3 - ISC license
-        4 - Apache Software License 2.0
-        5 - GNU General Public License v3
-        6 - Not open source
-        Choose from 1, 2, 3, 4, 5, 6 [1]: 5
+      full_name [Audrey Roy Greenfeld]: François Durand
+      email [aroy@alum.mit.edu]: fradurand@gmail.com
+      github_username [audreyr]: francois-durand
+      project_name [Python Boilerplate]: My Toy Package
+      project_slug [my_toy_package]:
+      project_short_description [Python Boilerplate contains all the boilerplate
+      you need to create a Python package.]: My Toy Package shows how to use
+      Cookiecutter.
+      pypi_username [francois-durand]:
+      version [0.1.0]:
+      use_pytest [n]: y
+      use_pypi_deployment_with_travis [y]:
+      add_pyup_badge [n]: y
+      Select command_line_interface:
+      1 - Click
+      2 - No command-line interface
+      Choose from 1, 2 [1]:
+      create_author_file [y]:
+      Select open_source_license:
+      1 - MIT license
+      2 - BSD license
+      3 - ISC license
+      4 - Apache Software License 2.0
+      5 - GNU General Public License v3
+      6 - Not open source
+      Choose from 1, 2, 3, 4, 5, 6 [1]: 5
 
 Some explanations now:
 
@@ -123,12 +123,12 @@ In PyCharm:
 #. Fill in the form: New environment using Virtualenv. This directory proposed is just fine. Validate.
 #. Open the file ``.gitignore`` (you can do so in PyCharm).
 
-    #. Add these lines (e.g. at the end of the file)::
+   #. Add these lines (e.g. at the end of the file)::
 
-        # PyCharm project settings
-        .idea
+      # PyCharm project settings
+      .idea
 
-    #. Check that ``venv`` is also excluded.
+   #. Check that ``venv`` is also excluded.
 
 Create the GitHub Repo
 ======================
@@ -137,17 +137,17 @@ In PyCharm:
 
 #. If it is not already done, register your GitHub account in PyCharm:
 
-    #. Menu File -> Settings -> Version Control -> GitHub.
-    #. Choose Auth type -> password.
-    #. Fill in the form and validate.
+   #. Menu File -> Settings -> Version Control -> GitHub.
+   #. Choose Auth type -> password.
+   #. Fill in the form and validate.
 
 #. Menu VCS -> Import into version control -> Share project on GitHub.
 
 #. Fill in the form and validate, e.g.::
 
-    New repository name: my_toy_package
-    Remote name: origin
-    Description: My Toy Package shows how to use cookiecutter.
+   New repository name: my_toy_package
+   Remote name: origin
+   Description: My Toy Package shows how to use cookiecutter.
 
 In a browser, you can go to your GitHub account to check that everything is there.
 
@@ -159,7 +159,7 @@ In the PyCharm terminal:
 #. Ensure you are in the directory of your package (e.g. ``D:\GitHub\my_toy_package``).
 #. Ensure that your virtual environment is activated: there should be ``(venv)`` at the beginning of the line. If not::
 
-    venv\Scripts\activate
+   venv\Scripts\activate
 
 #. ``pip install -r requirements_dev.txt``
 
@@ -170,7 +170,7 @@ This way, your package behaves as if it were installed, but any change you make 
 In the PyCharm terminal, you should still be in the directory of your package, with your virtual environment activated.
 Do::
 
-    python setup.py develop
+   python setup.py develop
 
 Set Up Travis CI
 ================
@@ -179,14 +179,14 @@ Ensure that Travis CLI is installed on your computer.
 
 * Under Windows:
 
-    #. Install Ruby (https://rubyinstaller.org/ ).
-    #. In PyCharm terminal, do: ``gem install -V travis --no-rdoc --no-ri``.
+   #. Install Ruby (https://rubyinstaller.org/ ).
+   #. In PyCharm terminal, do: ``gem install -V travis --no-rdoc --no-ri``.
 
 * Under Debian, run as root::
 
-    apt-get update
-    apt-get install cookie-cutter ruby ruby-dev gcc
-    gem install -V travis --no-rdoc --no-ri
+   apt-get update
+   apt-get install cookie-cutter ruby ruby-dev gcc
+   gem install -V travis --no-rdoc --no-ri
 
 If you experience troubles installing travis, cf. https://github.com/travis-ci/travis.rb#installation.
 
@@ -194,61 +194,61 @@ Once Travis CLI is installed:
 
 #. On Travis website:
 
-    #. Login using your Github credentials.
-    #. It may take a few minutes for Travis CI to load up a list of all your GitHub repos. They will be listed with
-       boxes to the left of the repo name, where the boxes have an X in them, meaning it is not connected to Travis CI.
-       Add the public repo to your Travis CI account by clicking the X to switch it “on” in the box next to the
-       ``my_toy_package`` repo. Do not try to follow the other instructions, that will be taken care of next.
+   #. Login using your Github credentials.
+   #. It may take a few minutes for Travis CI to load up a list of all your GitHub repos. They will be listed with
+      boxes to the left of the repo name, where the boxes have an X in them, meaning it is not connected to Travis CI.
+      Add the public repo to your Travis CI account by clicking the X to switch it “on” in the box next to the
+      ``my_toy_package`` repo. Do not try to follow the other instructions, that will be taken care of next.
 
 #. In PyCharm terminal, ensure that you are in the directory of your project and::
 
-    travis encrypt --add deploy.password "My PyPI password"
+   travis encrypt --add deploy.password "My PyPI password"
 
    (replace with your actual password, in quotation marks).
 
 #. Open the file ``.travis.yml`` (you can do so in PyCharm).
 
-    #. Check that ``deploy.password.secure`` is encoded.
-    #. Suppress the line ``- 2.7`` (unless you plan to write code that is compatible with Python 2.7).
+   #. Check that ``deploy.password.secure`` is encoded.
+   #. Suppress the line ``- 2.7`` (unless you plan to write code that is compatible with Python 2.7).
 
 Set Up ReadTheDocs
 ==================
 
-On ReadTheDocs website:
+#. On ReadTheDocs website:
 
-#. Paramètres -> Comptes liés. Check that your GitHub account is listed here.
-#. Go to “My Projects”. Import a Project -> Importer manuellement. Fill in the form and validate, e.g.::
+   #. Paramètres -> Comptes liés. Check that your GitHub account is listed here.
+   #. Go to “My Projects”. Import a Project -> Importer manuellement. Fill in the form and validate, e.g.::
 
-    my_toy_package
-    https://github.com/francois-durand/my_toy_package
-    Git
+      my_toy_package
+      https://github.com/francois-durand/my_toy_package
+      Git
 
-#. Admin -> Advanced settings.
+   #. Admin -> Advanced settings.
 
-    #. Check "Installer votre projet dans un virtualenv via setup.py install".
-    #. In "Python interpreter", choose "CPython 3.x".
+      #. Check "Installer votre projet dans un virtualenv via setup.py install".
+      #. In "Python interpreter", choose "CPython 3.x".
 
-In PyCharm, commit/push, i.e.:
+#. In PyCharm, commit/push, i.e.:
 
-#. Menu VCS -> Commit.
-#. Enter a commit message, e.g. ``Initial settings``.
-#. Commit -> Commit and push.
-#. Push.
+   #. Menu VCS -> Commit.
+   #. Enter a commit message, e.g. ``Initial settings``.
+   #. Commit -> Commit and push.
+   #. Push.
 
 Set Up Pyup
 ===========
 
 #. On Pyup website:
 
-    #. Click on the green *Add Repo* button and select the repo you created.
-    #. A pop up appears. Personally, I checked the first item and unchecked the two others.
+   #. Click on the green *Add Repo* button and select the repo you created.
+   #. A pop up appears. Personally, I checked the first item and unchecked the two others.
 
    Within a few minutes, you will probably receive a pull request in GitHub (and in your email).
 
 #. On GitHub website:
 
-    #. Accept merge.
-    #. Delete branch.
+   #. Accept merge.
+   #. Delete branch.
 
 #. In PyCharm, menu VCS -> Update project. This does a git update (to get the modifications done by Pyup).
 
@@ -258,26 +258,26 @@ Add the Example Files
 #. On GitHub website, download `My Toy Package`_.
 #. In a terminal or file explorer:
 
-    #. Move the directories ``my_toy_package\my_toy_package\SubPackage1`` and ``my_toy_package\my_toy_package\SubPackage2``
-       into the corresponding places in your project.
-    #. Move the file ``my_toy_package\docs\reference`` into the corresponding place in your project.
-    #. You can throw away the other files you downloaded.
+   #. Move the directories ``my_toy_package\my_toy_package\SubPackage1`` and ``my_toy_package\my_toy_package\SubPackage2``
+      into the corresponding places in your project.
+   #. Move the file ``my_toy_package\docs\reference`` into the corresponding place in your project.
+   #. You can throw away the other files you downloaded.
 
 #. In PyCharm:
 
-    #. Right-click on the files you added. Git -> Add.
-    #. In the file ``MyClass1``, replace ``my_toy_package`` with the name of your package.
-    #. Manually modify the copyright statement in files ``MyClass1``, ``MyClass2`` and ``MyClass3``.
-    #. In the file ``reference``, replace ``my_toy_package`` with the name of your package.
-    #. In the file ``index.rst``, just after the line ``usage``, add ``reference``.
-    #. In the file ``__init__.py``, add the following shortcuts::
+   #. Right-click on the files you added. Git -> Add.
+   #. In the file ``MyClass1``, replace ``my_toy_package`` with the name of your package.
+   #. Manually modify the copyright statement in files ``MyClass1``, ``MyClass2`` and ``MyClass3``.
+   #. In the file ``reference``, replace ``my_toy_package`` with the name of your package.
+   #. In the file ``index.rst``, just after the line ``usage``, add ``reference``.
+   #. In the file ``__init__.py``, add the following shortcuts::
 
-        from .SubPackage1.MyClass1 import MyClass1
-        from .SubPackage2.MyClass2 import MyClass2
-        from .SubPackage2.MyClass3 import MyClass3.
+      from .SubPackage1.MyClass1 import MyClass1
+      from .SubPackage2.MyClass2 import MyClass2
+      from .SubPackage2.MyClass3 import MyClass3.
 
-    #. In the file ``setup.py``, remove the two lines about Python 2 (unless you plan to write code that is compatible
-       with Python 2).
+   #. In the file ``setup.py``, remove the two lines about Python 2 (unless you plan to write code that is compatible
+      with Python 2).
 
 .. _`My Toy Package`: https://github.com/francois-durand/my_toy_package
 
