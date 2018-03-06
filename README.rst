@@ -202,7 +202,7 @@ Once Travis CLI is installed:
 
 #. In PyCharm terminal, ensure that you are in the directory of your project and::
 
-   travis encrypt --add deploy.password "My PyPI password"
+      travis encrypt --add deploy.password "My PyPI password"
 
    (replace with your actual password, in quotation marks).
 
