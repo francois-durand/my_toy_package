@@ -179,8 +179,8 @@ Ensure that Travis CLI is installed on your computer.
 
 * Under Windows:
 
-   #. Install Ruby (https://rubyinstaller.org/ ).
-   #. In PyCharm terminal, do: ``gem install -V travis --no-rdoc --no-ri``.
+  #. Install Ruby (https://rubyinstaller.org/ ).
+  #. In PyCharm terminal, do: ``gem install -V travis --no-rdoc --no-ri``.
 
 * Under Debian, run as root::
 
