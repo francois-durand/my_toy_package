@@ -259,8 +259,8 @@ Add the Example Files
 #. In a terminal or file explorer:
 
    #. Move the directories ``my_toy_package\my_toy_package\SubPackage1`` and ``my_toy_package\my_toy_package\SubPackage2``
-      into the corresponding places in your project.
-   #. Move the file ``my_toy_package\docs\reference`` into the corresponding place in your project.
+      into the corresponding places of your project.
+   #. Move the file ``my_toy_package\docs\reference`` into the corresponding place of your project.
    #. You can throw away the other files you downloaded.
 
 #. In PyCharm:
@@ -272,9 +272,9 @@ Add the Example Files
    #. In the file ``index.rst``, just after the line ``usage``, add ``reference``.
    #. In the file ``__init__.py``, add the following shortcuts::
 
-      from .SubPackage1.MyClass1 import MyClass1
-      from .SubPackage2.MyClass2 import MyClass2
-      from .SubPackage2.MyClass3 import MyClass3.
+         from .SubPackage1.MyClass1 import MyClass1
+         from .SubPackage2.MyClass2 import MyClass2
+         from .SubPackage2.MyClass3 import MyClass3.
 
    #. In the file ``setup.py``, remove the two lines about Python 2 (unless you plan to write code that is compatible
       with Python 2).
