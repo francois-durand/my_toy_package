@@ -277,7 +277,7 @@ Add the Example Files
     #. In the file ``setup.py``, remove the two lines about Python 2 (unless you plan to write code that is compatible
        with Python 2).
 
-_my_toy_package: https://github.com/francois-durand/my_toy_package
+_ my_toy_package: https://github.com/francois-durand/my_toy_package
 
 -------
 Credits
