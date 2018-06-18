@@ -159,7 +159,8 @@ In the PyCharm terminal:
 #. Ensure you are in the directory of your package (e.g. ``D:\GitHub\my_toy_package``).
 #. Ensure that your virtual environment is activated: there should be ``(venv)`` at the beginning of the line. If not::
 
-      venv\Scripts\activate
+      Windows: venv\Scripts\activate
+      Linux:   source venv/bin/activate
 
 #. ``pip install -r requirements_dev.txt``
 
