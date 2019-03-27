@@ -86,7 +86,7 @@ Generate Your Package
          Select command_line_interface:
          1 - Click
          2 - No command-line interface
-         Choose from 1, 2 [1]:
+         Choose from 1, 2 [1]: 2
          create_author_file [y]:
          Select open_source_license:
          1 - MIT license
@@ -107,7 +107,7 @@ Some explanations now:
   your package on PyPI.
 * ``add_pyup_badge``: a pyup badge will appear in the readme of your package.
 * ``Click``: this allows you to easily call your program with unix-style command, e.g. ``python my_program.py --help``
-  You can answer yes, even if you do not use it for the moment.
+  You can answer yes, even if you do not use it for the moment. But personally, I answer no.
 * ``create_author_file``: I suggest to answer yes.
 
 Create the PyCharm Project
@@ -298,6 +298,21 @@ In PyCharm:
 
 Run this configuration: normally, it runs all the tests of the project.
 
+Add a Run Configuration for Sphinx
+==================================
+
+In PyCharm:
+
+#. Menu Run → Edit Configurations.
+#. Plus icon (top left) → Python docs → Sphinx task.
+#. Give a name to the configuration, e.g. ``Generate docs``.
+#. Input: the "docs" directory of your project.
+#. Output: the "build" directory of your project.
+#. OK.
+
+Run this configuration: normally, it generates the documentation. To check the result, you can open the file
+``build/index.html``.
+
 Check that Everything is Working
 ================================
 
@@ -333,12 +348,15 @@ In PyCharm:
    * ``bumpversion patch`` (version x.y.z → x.y.(z+1)) when you made a backwards-compatible modification (such as a
      bug fix).
    * ``bumpversion minor`` (version x.y.z → x.(y+1).0) when you added a functionality.
-   * ``bumpversion major`` (version x.y.z → x+1.0.0) when you changed the API. Note: in versions 0.y.z, the API is not
-     expected to be stable anyway.
+   * ``bumpversion major`` (version x.y.z → (x+1).0.0) when you changed the API. Note: in versions 0.y.z, the API is
+     not expected to be stable anyway.
 
 #. Commit/push.
-#. Menu VCS → Git → Tag. Add a tag name (e.g. ``v0.1.0``) and a message (e.g. ``First stable version``).
-#. Push. The box *Push tags* must be ticked.
+
+If you were working on a secondary branch, do what you have to (pull request to master, etc).
+
+On Github website, go to "releases". Create a new release, add a tag name (e.g. ``v0.1.0``) and a message
+(e.g. ``First stable version``).
 
 After a few minutes, Travis CI has finished the built and it is deployed on PyPI.
 

@@ -47,9 +47,6 @@ class MyClass2:
 
 
 if __name__ == '__main__':
-    import doctest
-    doctest.testmod()
-
     print('Do some little tests here')
     test = MyClass2(a=42, b=51)
     print(test.addition())
