@@ -355,8 +355,8 @@ In PyCharm:
 
 If you were working on a secondary branch, do what you have to (pull request to master, etc).
 
-On Github website, go to "releases". Create a new release, add a tag name (e.g. ``v0.1.0``) and a message
-(e.g. ``First stable version``).
+On Github website, go to "releases". Select "Draft a new release", add a tag name (e.g. ``v0.1.0``) and a message
+(e.g. ``First stable version``). Select "Publish release".
 
 After a few minutes, Travis CI has finished the built and it is deployed on PyPI.
 
