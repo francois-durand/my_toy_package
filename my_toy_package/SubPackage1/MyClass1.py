@@ -27,7 +27,7 @@ class MyClass1:
     :param a: the `a` of the system. Must be nonnegative.
     :param b: the `b` of the system.
 
-    :var str my_string: a nice string.
+    :ivar str my_string: a nice string.
 
     :raise ValueError: if :attr:`a` is negative.
 
@@ -38,7 +38,7 @@ class MyClass1:
     * Refer to a class this way: :class:`MyClass2`.
     * Refer to a method this way: :meth:`addition`.
     * Refer to a method in another class: :meth:`MyClass2.addition`.
-    * Refer to an parameter or variable this way: :attr:`a`.
+    * Refer to a parameter or variable this way: :attr:`a` or ``a``.
 
     >>> my_object = MyClass1(a=5, b=3)
     """
@@ -56,7 +56,7 @@ class MyClass1:
         self.my_string = 'a = %s and b = %s' % (a, b)           # type: str
 
     def __repr__(self) -> str:
-        return '<MyClass1: a=%s, b=%s>' % (self.a, self.b)
+        return 'MyClass1(a=%r, b=%r)' % (self.a, self.b)
 
     def __str__(self) -> str:
         return '(a, b) = %s, %s' % (self.a, self.b)
@@ -73,8 +73,7 @@ class MyClass1:
 
         :raise ZeroDivisionError: if :attr:`c` = 0.
 
-        This function gives an example of Sphinx documentation with typical
-        features.
+        This function gives an example of Sphinx documentation with typical features.
 
         >>> my_object = MyClass1(a=5, b=3)
         >>> my_object.divide_a_by_c_and_add_d(c=2, d=10)
@@ -112,9 +111,6 @@ class MyClass1:
 
 
 if __name__ == '__main__':
-    import doctest
-    doctest.testmod()
-
     print('Do some little tests here')
     test = MyClass1(a=42, b=51)
     print(test.addition())

@@ -2,6 +2,13 @@
 History
 =======
 
+0.2.0 (2019-03-27)
+------------------
+
+* Configuration for local build of documentation with Sphinx.
+* Release a version directly on Github's website.
+* Minor edits in documentation.
+
 0.1.6 (2018-03-06)
 ------------------
 
