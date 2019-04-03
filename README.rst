@@ -160,7 +160,7 @@ In PyCharm:
 #. If it is not already done, register your GitHub account in PyCharm:
 
    #. Menu File → Settings → Version Control → GitHub.
-   #. Choose Auth type → password.
+   #. Click on the "+" icon.
    #. Fill in the form and validate.
 
 #. Menu VCS → Import into version control → Share project on GitHub.
@@ -171,7 +171,8 @@ In PyCharm:
       Remote name: origin
       Description: My Toy Package shows how to use cookiecutter.
 
-In a browser, you can go to your GitHub account to check that everything is there.
+In a browser, you can go to your GitHub account to check that everything is there. If not, do an initial commit in
+PyCharm: VCS → Commit...
 
 Install Dev Requirements
 ========================
