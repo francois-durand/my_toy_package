@@ -23,7 +23,23 @@ My Toy Package shows how to use Cookiecutter.
 * Documentation: https://my-toy-package.readthedocs.io.
 
 The following walk-through is a checklist of how to create and maintain your Python package, especially relying on
-Cookiecutter, by Audrey Roy Greenfeld, and PyCharm.
+Cookiecutter, by Audrey Roy Greenfeld, and PyCharm. We will also use GitHub, ReadTheDocs, PyPI, Travis CI and Pyup.
+
+In the end, here is how it will work.
+
+* When you push modifications to GitHub:
+
+    * Travis CI automatically runs all the tests and checks that everything is working on several versions of Python
+      (e.g. 3.5, 3.6, 3.7).
+    * ReadTheDocs automatically generates the documentation and publishes it online.
+
+* When you "tag" a version on GitHub, in other words when you "draft a release": Travis CI not only performs
+  the tests but also generates the distribution files of your package and publishes them on PyPI. As a consequence,
+  any Python user will be able to install you package via ``pip install the_name_of_your_package``.
+
+* Generally, your package has dependencies on other packages. PyUp informs you when a new version of these
+  third-party packages are released. You receive a pull request in GitHub, Travis CI checks that everything is OK,
+  and you just have to accept the pull request in GitHub.
 
 -------------------
 Create your package
@@ -59,6 +75,11 @@ Or, if you prefer::
 
    easy_install cookiecutter
 
+Install Git
+===========
+
+If necessary, install git: https://git-scm.com/downloads .
+
 Generate Your Package
 =====================
 
@@ -66,7 +87,7 @@ Generate Your Package
    Before starting, check that your project slug is not used in PyPI.
 #. In a terminal (e.g. Anaconda Prompt):
 
-   #. Go to your GitHub directory, e.g. ``D:\GitHub\``.
+   #. Go to the parent directory of where you want to put the directory of your package, e.g. ``D:\GitHub\``.
    #. ``cookiecutter https://github.com/audreyr/cookiecutter-pypackage.git``
    #. Answer the questions. Here is an example (some explanations follow)::
 
@@ -129,7 +150,7 @@ In PyCharm:
          # PyCharm project settings
          .idea
 
-   #. Check that ``venv`` is also excluded.
+   #. Check that ``venv`` is also excluded, i.e. there should be a line ``venv/`` in the file ``.gitignore``.
 
 Create the GitHub Repo
 ======================
@@ -189,6 +210,11 @@ Ensure that Travis CLI is installed on your computer.
    apt-get update
    apt-get install cookie-cutter ruby ruby-dev gcc
    gem install -V travis --no-rdoc --no-ri
+
+* Under Ubuntu 16, run::
+
+    sudo apt-get install ruby-dev
+    sudo gem install -V travis --no-rdoc --no-ri
 
 If you experience troubles installing travis, cf. https://github.com/travis-ci/travis.rb#installation.
 
