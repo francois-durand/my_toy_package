@@ -201,7 +201,7 @@ Do::
 Set Up Travis CI
 ================
 
-Ensure that Travis CLI is installed on your computer.
+Ensure that Travis CI is installed on your computer.
 
 * Under Windows:
 
@@ -221,7 +221,7 @@ Ensure that Travis CLI is installed on your computer.
 
 If you experience troubles installing travis, cf. https://github.com/travis-ci/travis.rb#installation.
 
-Once Travis CLI is installed:
+Once Travis CI is installed:
 
 #. On Travis website:
 
