@@ -201,12 +201,13 @@ Do::
 Set Up Travis CI
 ================
 
-Ensure that Travis CI is installed on your computer.
+Ensure that Travis Client is installed on your computer.
 
 * Under Windows:
 
   #. Install Ruby (https://rubyinstaller.org/ ).
-  #. In PyCharm terminal, do: ``gem install -V travis --no-rdoc --no-ri``.
+  #. In PyCharm terminal, do: ``gem install -V travis --no-rdoc --no-ri``. It is does not work, restart your computer
+     and try again.
 
 * Under Debian, run as root::
 
@@ -221,7 +222,7 @@ Ensure that Travis CI is installed on your computer.
 
 If you experience troubles installing travis, cf. https://github.com/travis-ci/travis.rb#installation.
 
-Once Travis CI is installed:
+Once Travis Client is installed:
 
 #. On Travis website:
 
