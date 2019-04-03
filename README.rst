@@ -174,6 +174,8 @@ In PyCharm:
 In a browser, you can go to your GitHub account to check that everything is there. If not, do an initial commit in
 PyCharm: VCS → Commit...
 
+N.B.: if you use a public GitHub repository, using PyPI is free (but not for a private repository).
+
 Install Dev Requirements
 ========================
 
