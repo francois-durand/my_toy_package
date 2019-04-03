@@ -206,6 +206,7 @@ Ensure that Travis Client is installed on your computer.
 * Under Windows:
 
   #. Install Ruby (https://rubyinstaller.org/ ).
+  #. Run PyCharm as Administrator.
   #. In PyCharm terminal, do: ``gem install -V travis --no-rdoc --no-ri``. It is does not work, restart your computer
      and try again.
 
@@ -238,7 +239,7 @@ Once Travis Client is installed:
 
    (replace with your actual password, in quotation marks).
 
-#. Open the file ``.travis.yml`` (you can do so in PyCharm).
+#. Open the file ``.travis.yml``, which is in the root of your project (you can do so in PyCharm).
 
    #. Check that ``deploy.password.secure`` is encoded.
    #. Suppress the line ``- 2.7`` (unless you plan to write code that is compatible with Python 2.7).
@@ -277,8 +278,9 @@ Set Up Pyup
 
    Within a few minutes, you will probably receive a pull request in GitHub (and in your email).
 
-#. On GitHub website:
+#. On GitHub website, open the pull request and:
 
+   #. Merge pull request.
    #. Accept merge.
    #. Delete branch.
 
@@ -297,10 +299,10 @@ Add the Example Files
 
 #. In PyCharm:
 
-   #. Right-click on the files you added. Git → Add.
+   #. Right-click on the directories and files you added. Git → Add.
    #. In the file ``MyClass1``, replace ``my_toy_package`` with the name of your package.
    #. Manually modify the copyright statement in files ``MyClass1``, ``MyClass2`` and ``MyClass3``.
-   #. In the file ``reference``, replace ``my_toy_package`` with the name of your package.
+   #. In the file ``reference.rst``, replace ``my_toy_package`` with the name of your package.
    #. In the file ``index.rst``, just after the line ``usage``, add ``reference``.
    #. In the file ``__init__.py``, add the following shortcuts::
 
@@ -322,7 +324,7 @@ Add a Run Configuration for Doctest
 In PyCharm:
 
 #. Menu Run → Edit Configurations.
-#. Add a new configuration by clicking the + button → Python tests → py.test.
+#. Add a new configuration by clicking the + button → Python tests → pytest.
 #. Give a name to the configuration, e.g. ``All tests``.
 #. In *Additional Arguments* field, add ``--doctest-modules``.
 #. Ignore the warning and validate.
