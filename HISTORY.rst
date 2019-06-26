@@ -2,10 +2,15 @@
 History
 =======
 
+0.2.5 (2019-06-26)
+------------------
+
+* Downgrade dev requirements to try to solve deployment problem on PyPI.
+
 0.2.4 (2019-06-26)
 ------------------
 
-* Tackle deployment problem on PyPI.
+* Try to tackle deployment problem on PyPI.
 
 0.2.3 (2019-06-26)
 ------------------
