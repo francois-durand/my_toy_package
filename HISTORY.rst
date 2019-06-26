@@ -2,6 +2,11 @@
 History
 =======
 
+0.2.3 (2019-06-26)
+------------------
+
+* Correct the procedure for version release.
+
 0.2.2 (2019-04-03)
 ------------------
 
