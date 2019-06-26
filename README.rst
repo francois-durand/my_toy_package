@@ -376,6 +376,7 @@ Release a Version
 In PyCharm:
 
 #. Update the file ``HISTORY.rst``.
+#. Commit/push.
 #. In PyCharm terminal, do one of the following:
 
    * ``bumpversion patch`` (version x.y.z → x.y.(z+1)) when you made a backwards-compatible modification (such as a
@@ -383,8 +384,6 @@ In PyCharm:
    * ``bumpversion minor`` (version x.y.z → x.(y+1).0) when you added a functionality.
    * ``bumpversion major`` (version x.y.z → (x+1).0.0) when you changed the API. Note: in versions 0.y.z, the API is
      not expected to be stable anyway.
-
-#. Commit/push.
 
 If you were working on a secondary branch, do what you have to (pull request to master, etc).
 
