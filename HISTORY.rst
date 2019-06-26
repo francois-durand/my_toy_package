@@ -2,6 +2,11 @@
 History
 =======
 
+0.3.0 (2019-06-26)
+------------------
+
+* Try to change the minor version number to solve deployment problem on PyPI.
+
 0.2.5 (2019-06-26)
 ------------------
 
