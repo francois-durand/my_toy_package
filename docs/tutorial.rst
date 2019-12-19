@@ -168,11 +168,13 @@ N.B.: if you use a public GitHub repository, using PyPI is free (but not for a p
 Install Dev Requirements
 ========================
 
-Preliminary step: if you work on a "small" project, and especially if you do not have a virtual environment, I suggest
+Preliminary step 1: if you work on a "small" project, and especially if you do not have a virtual environment, I suggest
 that you do not impose the exact versions of the third-party packages used for development.
 
 #. Open the file ``requirements_dev.txt``.
 #. Remove all the mentions of the form ``==x.y.z``.
+
+Preliminary step 2: add a line ``twine`` in ``requirements_dev.txt``.
 
 Anyway, in the PyCharm terminal:
 
@@ -391,6 +393,13 @@ In PyCharm:
 #. Run the tests.
 #. Generate the documentation locally in order to check that it is working.
 #. Update the file ``HISTORY.rst``.
+#. Check that the readme will be correctly rendered on PyPI. In a terminal::
+
+      python setup.py bdist
+      twine check dist/the_name_of_the_file.zip
+
+   where ``the_name_of_the_file`` must be replaced by the relevant file name.
+
 #. Commit/push.
 #. In PyCharm terminal, do one of the following:
 

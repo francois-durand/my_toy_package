@@ -3,16 +3,15 @@ My Toy Package
 ==============
 
 
+.. image:: https://img.shields.io/pypi/v/my_toy_package.svg
+        :target: https://pypi.python.org/pypi/my_toy_package
+
 .. image:: https://img.shields.io/travis/francois-durand/my_toy_package.svg
         :target: https://travis-ci.org/francois-durand/my_toy_package
 
 .. image:: https://readthedocs.org/projects/my-toy-package/badge/?version=latest
         :target: https://my-toy-package.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
-
-.. image:: https://pyup.io/repos/github/francois-durand/my_toy_package/shield.svg
-     :target: https://pyup.io/repos/github/francois-durand/my_toy_package/
-     :alt: Updates
 
 My Toy Package shows how to create and maintain a package.
 
