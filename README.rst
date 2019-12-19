@@ -345,6 +345,15 @@ Add the Example Files
 .. _`My Toy Package`: https://github.com/francois-durand/my_toy_package
 
 
+Change the documentation style
+==============================
+
+Do this if you want to use Numpy style of documentation.
+
+#. In PyCharm: File → Settings → Tools → Python Integrated Tools → Docstrings → Docstring format → NumPy.
+#. Open the file ``docs\conf.py``. In the declaration of the list of extensions (line of the form
+   ``extensions = [...]``), add the element ``'sphinx.ext.napoleon'`` in the list.
+
 Add a Run Configuration for Doctest
 ===================================
 
