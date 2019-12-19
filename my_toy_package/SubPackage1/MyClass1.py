@@ -24,22 +24,38 @@ from my_toy_package.SubPackage2.MyClass2 import MyClass2
 class MyClass1:
     """A whatever-you-are-doing.
 
-    :param a: the `a` of the system. Must be nonnegative.
-    :param b: the `b` of the system.
+    Parameters
+    ----------
+    a : float
+        The `a` of the system. Must be non-negative.
+    b : float
+        The `b` of the system.
 
-    :ivar str my_string: a nice string.
+    Attributes
+    ----------
+    my_string : str
+        A nice string.
 
-    :raise ValueError: if :attr:`a` is negative.
+    Raises
+    ------
+    ValueError
+        If `a` is negative.
 
-    Note: document the :meth:`__init__` method in the docstring of the class
-    itself, because the docstring of the :meth:`__init__` method does not
-    appear in the documentation.
+    Notes
+    -----
+    Document the :meth:`__init__` method in the docstring of the class itself,
+    because the docstring of the :meth:`__init__` method does not appear in the
+    documentation.
 
     * Refer to a class this way: :class:`MyClass2`.
     * Refer to a method this way: :meth:`addition`.
     * Refer to a method in another class: :meth:`MyClass2.addition`.
-    * Refer to a parameter or variable this way: :attr:`a` or ``a``.
+    * Refer to an attribute this way: :attr:`my_string`.
+    * Refer to a property this way: :attr:`a_square`.
+    * Refer to a parameter or variable this way: `a`.
 
+    Examples
+    --------
     >>> my_object = MyClass1(a=5, b=3)
     """
 
@@ -50,10 +66,10 @@ class MyClass1:
 
     def __init__(self, a: float, b: float):
         if a < 0:
-            raise ValueError('Expected nonnegative a, got: ', a)
+            raise ValueError('Expected non-negative a, got: ', a)
         self.a = a
         self.b = b
-        self.my_string = 'a = %s and b = %s' % (a, b)           # type: str
+        self.my_string = 'a = %s and b = %s' % (a, b)
 
     def __repr__(self) -> str:
         return 'MyClass1(a=%r, b=%r)' % (self.a, self.b)
@@ -62,55 +78,91 @@ class MyClass1:
         return '(a, b) = %s, %s' % (self.a, self.b)
 
     def divide_a_by_c_and_add_d(self, c: float, d: float) -> float:
-        """
-        Divide :attr:`a` by something and add something else.
+        """Divide `a` by something and add something else.
 
-        :param c: a non-zero number. If you want to say many things about this
-            parameter, you must indent the following lines, like this.
-        :param d: a beautiful number.
+        Parameters
+        ----------
+        c : Number
+            A non-zero number. You can say many things about this parameter
+            in several indented lines, like this.
+        d : Number
+            A beautiful number.
 
-        :return: :attr:`a` / :attr:`c` + :attr:`d`.
+        Returns
+        -------
+        Number
+            The result of `a / c + d`.
 
-        :raise ZeroDivisionError: if :attr:`c` = 0.
+        Raises
+        ------
+        ZeroDivisionError
+            If `c` = 0.
 
-        This function gives an example of Sphinx documentation with typical features.
+        Notes
+        -----
+        This function gives an example of documentation with typical features.
 
-        >>> my_object = MyClass1(a=5, b=3)
-        >>> my_object.divide_a_by_c_and_add_d(c=2, d=10)
-        12.5
+        Examples
+        --------
+        We can write some text to explain the following example:
+
+            >>> my_object = MyClass1(a=5, b=3)
+            >>> my_object.divide_a_by_c_and_add_d(c=2, d=10)
+            12.5
+
+        And we can explain a second example here:
+
+            >>> my_object = MyClass1(a=5, b=3)
+            >>> my_object.divide_a_by_c_and_add_d(c=2, d=20)
+            22.5
         """
         return self.a / c + d
 
     def addition(self) -> float:
-        """
-        Add :attr:`a` and :attr:`b`.
+        """Add `a` and `b`.
 
-        :return: :attr:`a` + :attr:`b`.
+        Returns
+        -------
+        Number
+            The sum of `a` and `b`.
 
-        >>> my_object = MyClass1(a=5, b=3)
-        >>> my_object.addition()
-        8
+        Examples
+        --------
+            >>> my_object = MyClass1(a=5, b=3)
+            >>> my_object.addition()
+            8
         """
         return MyClass2(self.a, self.b).addition()
 
+    @property
+    def a_square(self) -> float:
+        """The square of `a`."""
+        return self.a ** 2
+
     # noinspection PyProtectedMember
     def _secret_function(self) -> float:
-        """
-        Difference between :attr:`a` and :attr:`b`.
+        """Difference between `a` and `b`.
 
-        :return: :attr:`a` - :attr:`b`.
+        Returns
+        -------
+        Number
+            The result of `a` - `b`.
 
+        Notes
+        -----
         Since the name of this function starts with _, it does not appear in
-        the Sphinx documentation.
+        the Sphinx documentation (by default).
 
-        >>> my_object = MyClass1(a=5, b=3)
-        >>> my_object._secret_function()
-        2
+        Examples
+        --------
+            >>> my_object = MyClass1(a=5, b=3)
+            >>> my_object._secret_function()
+            2
         """
         return self.a - self.b
 
 
 if __name__ == '__main__':
-    print('Do some little tests here')
+    print('We can do some little tests here')
     test = MyClass1(a=42, b=51)
     print(test.addition())

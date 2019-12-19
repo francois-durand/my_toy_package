@@ -2,6 +2,14 @@
 History
 =======
 
+0.4.1 (2019-12-19)
+------------------
+
+* Use numpy style of documentation instead of sphinx basic style.
+* In the readme, correct the explanations about Pyup.
+* Say more explicitly that some steps are optional, like setting a virtual environment or using pyup.
+* Added how to make travis run the doctests (thanks to Quentin Lutz).
+
 0.3.2 (2019-06-27)
 ------------------
 

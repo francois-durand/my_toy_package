@@ -1,5 +1,5 @@
 Welcome to My Toy Package's documentation!
-======================================
+==========================================
 
 .. toctree::
    :maxdepth: 2
@@ -9,7 +9,6 @@ Welcome to My Toy Package's documentation!
    installation
    usage
    reference
-   modules
    contributing
    authors
    history

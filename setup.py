@@ -30,7 +30,7 @@ setup(
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
     ],
-    description="My Toy Package shows how to use Cookiecutter.",
+    description="My Toy Package shows how to create and maintain a package.",
     entry_points={
         'console_scripts': [
             'my_toy_package=my_toy_package.cli:main',

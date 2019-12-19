@@ -17,7 +17,7 @@ My Toy Package
      :target: https://pyup.io/repos/github/francois-durand/my_toy_package/
      :alt: Updates
 
-My Toy Package shows how to use Cookiecutter.
+My Toy Package shows how to create and maintain a package.
 
 * Free software: GNU General Public License v3.
 * Documentation: https://my-toy-package.readthedocs.io.
@@ -27,7 +27,9 @@ Cookiecutter, by Audrey Roy Greenfeld, and PyCharm. We will also use GitHub, Rea
 
 In the end, here is how it will work.
 
-* When you push modifications to GitHub:
+* You use the PyCharm IDE. It is configured to run tests and generate the documentation of your package locally.
+
+* Your project is on GitHub. When you push modifications to GitHub:
 
     * Travis CI automatically runs all the tests and checks that everything is working on several versions of Python
       (e.g. 3.5, 3.6, 3.7).
@@ -37,9 +39,10 @@ In the end, here is how it will work.
   the tests but also generates the distribution files of your package and publishes them on PyPI. As a consequence,
   any Python user will be able to install you package via ``pip install the_name_of_your_package``.
 
-* Generally, your package has dependencies on other packages. PyUp informs you when a new version of these
-  third-party packages are released. You receive a pull request in GitHub, Travis CI checks that everything is OK,
-  and you just have to accept the pull request in GitHub.
+* Generally, you use some external packages during the development process of your own package, for example ``sphinx``,
+  ``pytest``, etc. These packages and their versions are listed in the file ``requirements_dev.txt`` of your package, so
+  that each member of your team know which version is used. PyUp informs you when a new version of these
+  third-party packages are released: you receive a pull request in GitHub and you just have to accept it.
 
 -------------------
 Create your package
@@ -71,10 +74,6 @@ In a terminal (e.g. Anaconda Prompt)::
 
    pip install cookiecutter
 
-Or, if you prefer::
-
-   easy_install cookiecutter
-
 Install Git
 ===========
 
@@ -97,13 +96,13 @@ Generate Your Package
          project_name [Python Boilerplate]: My Toy Package
          project_slug [my_toy_package]:
          project_short_description [Python Boilerplate contains all the boilerplate
-         you need to create a Python package.]: My Toy Package shows how to use
-         Cookiecutter.
+         you need to create a Python package.]: My Toy Package shows how to
+         create and maintain a package.
          pypi_username [francois-durand]:
          version [0.1.0]:
          use_pytest [n]: y
          use_pypi_deployment_with_travis [y]:
-         add_pyup_badge [n]: y
+         add_pyup_badge [n]: n
          Select command_line_interface:
          1 - Click
          2 - No command-line interface
@@ -126,7 +125,7 @@ Some explanations now:
   later). For this reason, my advice is to answer yes.
 * ``use_pypi_deployment_with_travis``: when you will do a *release* in GitHub, Travis will automatically release
   your package on PyPI.
-* ``add_pyup_badge``: a pyup badge will appear in the readme of your package.
+* ``add_pyup_badge``: a pyup badge will appear in the readme of your package. I suggest to answer no.
 * ``Click``: this allows you to easily call your program with unix-style command, e.g. ``python my_program.py --help``
   You can answer yes, even if you do not use it for the moment. But personally, I answer no.
 * ``create_author_file``: I suggest to answer yes.
@@ -139,18 +138,31 @@ In PyCharm:
 #. Create new project.
 #. In *Location*, fetch the directory of your project, e.g. ``D:\GitHub\my_toy_package``. Validate.
 #. Warning that the directory is not empty: validate.
+
+Create a virtual environment
+============================
+
+A virtual environment is essentially a Python installation dedicated to your project, with its own versions
+of the third-party packages. It ensures that if you reuse this project several months later, it will still work...
+This is not mandatory, but I suggest it especially if you use a third-party package that is still in
+a 0.x.x release (which means that its API is not considered stable yet).
+
 #. Menu File → Settings → Project → Project Interpreter. (For Apple users: PyCharm → Preferences → Project →
    Project Interpreter.)
 #. Click on the gear-shaped icon → Add.
 #. Fill in the form: New environment using Virtualenv. This directory proposed is just fine. Validate.
-#. Open the file ``.gitignore`` (you can do so in PyCharm).
 
-   #. Add these lines (e.g. at the end of the file)::
+Configure the gitignore
+=======================
 
-         # PyCharm project settings
-         .idea
+Open the file ``.gitignore`` (you can do so in PyCharm).
 
-   #. Check that ``venv`` is also excluded, i.e. there should be a line ``venv/`` in the file ``.gitignore``.
+#. Add these lines (e.g. at the end of the file)::
+
+     # PyCharm project settings
+     .idea
+
+#. Check that ``venv`` is also excluded, i.e. there should be a line ``venv/`` in the file ``.gitignore``.
 
 Create the GitHub Repo
 ======================
@@ -169,7 +181,7 @@ In PyCharm:
 
       New repository name: my_toy_package
       Remote name: origin
-      Description: My Toy Package shows how to use cookiecutter.
+      Description: My Toy Package shows how to create and maintain a package.
 
 In a browser, you can go to your GitHub account to check that everything is there. If not, do an initial commit in
 PyCharm: VCS → Commit...
@@ -182,7 +194,8 @@ Install Dev Requirements
 In the PyCharm terminal:
 
 #. Ensure you are in the directory of your package (e.g. ``D:\GitHub\my_toy_package``).
-#. Ensure that your virtual environment is activated: there should be ``(venv)`` at the beginning of the line. If not::
+#. If you have set a virtual environment, ensure that it is activated: there should be ``(venv)`` at the beginning of
+   the line. If not::
 
       Windows: venv\Scripts\activate
       Linux:   source venv/bin/activate
@@ -207,7 +220,7 @@ Ensure that Travis Client is installed on your computer.
 
   #. Install Ruby (https://rubyinstaller.org/ ).
   #. Run PyCharm as Administrator.
-  #. In PyCharm terminal, do: ``gem install -V travis --no-rdoc --no-ri``. It is does not work, restart your computer
+  #. In PyCharm terminal, do: ``gem install -V travis --no-rdoc --no-ri``. If it does not work, restart your computer
      and try again.
 
 * Under Debian, run as root::
@@ -244,6 +257,11 @@ Once Travis Client is installed:
    #. Check that ``deploy.password.secure`` is encoded.
    #. Suppress the line ``- 2.7`` (unless you plan to write code that is compatible with Python 2.7).
 
+#. If you want that travis runs the doctests of your project, open the file ``tox.ini``. Replace the line
+   ``py.test --basetemp={envtmpdir}`` by::
+
+      py.test --basetemp={envtmpdir} --doctest-modules
+
 Set Up ReadTheDocs
 ==================
 
@@ -270,6 +288,9 @@ Set Up ReadTheDocs
 
 Set Up Pyup
 ===========
+
+If you work on a "small" project, I suggest that you do not use pyup: it will just generate a lot of spam in your email
+inbox. However, for a more ambitious project, it may be useful.
 
 #. On Pyup website:
 
@@ -375,6 +396,8 @@ Release a Version
 
 In PyCharm:
 
+#. Run the tests.
+#. Generate the documentation locally in order to check that it is working.
 #. Update the file ``HISTORY.rst``.
 #. Commit/push.
 #. In PyCharm terminal, do one of the following:
