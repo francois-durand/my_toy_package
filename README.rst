@@ -191,7 +191,13 @@ N.B.: if you use a public GitHub repository, using PyPI is free (but not for a p
 Install Dev Requirements
 ========================
 
-In the PyCharm terminal:
+Preliminary step: if you work on a "small" project, and especially if you do not have a virtual environment, I suggest
+that you do not impose the exact versions of the third-party packages used for development.
+
+#. Open the file ``requirements_dev.txt``.
+#. Remove all the mentions of the form ``==x.y.z``.
+
+Anyway, in the PyCharm terminal:
 
 #. Ensure you are in the directory of your package (e.g. ``D:\GitHub\my_toy_package``).
 #. If you have set a virtual environment, ensure that it is activated: there should be ``(venv)`` at the beginning of
