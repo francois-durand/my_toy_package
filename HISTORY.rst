@@ -2,6 +2,11 @@
 History
 =======
 
+0.4.2 (2019-12-19)
+------------------
+
+* Separate the tutorial from the readme file, in the hope that it will solve the deployment problem on PyPI.
+
 0.4.1 (2019-12-19)
 ------------------
 

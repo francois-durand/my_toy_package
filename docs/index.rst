@@ -6,6 +6,7 @@ Welcome to My Toy Package's documentation!
    :caption: Contents:
 
    readme
+   tutorial
    installation
    usage
    reference
