@@ -47,7 +47,7 @@ class MyClass1:
     because the docstring of the :meth:`__init__` method does not appear in the
     documentation.
 
-    * Refer to a class this way: :class:`MyClass2`.
+    * Refer to a class this way: :class:`MyClass2` (except as a type indication, cf. :meth:`update_b_from_class_2`).
     * Refer to a method this way: :meth:`addition`.
     * Refer to a method in another class: :meth:`MyClass2.addition`.
     * Refer to an attribute this way: :attr:`my_string`.
@@ -138,6 +138,27 @@ class MyClass1:
     def a_square(self) -> float:
         """The square of `a`."""
         return self.a ** 2
+
+    def update_b_from_class_2(self, object_of_class_2):
+        """Update `b` from a :class:`MyClass2` object.
+
+        Parameters
+        ----------
+        object_of_class_2 : MyClass2
+            An object from the other class. The purpose of this function is essentially to show how to document when
+            an argument is an object of another class.
+
+            N.B.: for the type of an argument, you can enter only the name of the class, e.g. ``MyClass2``.
+            However, in the rest of the documentation, you must use the full syntax, like ``:class:`MyClass2```.
+
+        Examples
+        --------
+            >>> my_object = MyClass1(a=5, b=3)
+            >>> my_object.update_b_from_class_2(MyClass2(42, 51))
+            >>> my_object.b
+            51
+        """
+        self.b = object_of_class_2.b
 
     # noinspection PyProtectedMember
     def _secret_function(self) -> float:

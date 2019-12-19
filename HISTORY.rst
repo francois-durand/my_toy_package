@@ -3,6 +3,12 @@ History
 =======
 
 ------------------
+0.5.0 (2019-12-19)
+------------------
+
+* Explain how to indicate the type of an argument in the docstring when it is an object of one of your classes.
+
+------------------
 0.4.3 (2019-12-19)
 ------------------
 
