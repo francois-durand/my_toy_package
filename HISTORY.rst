@@ -3,6 +3,12 @@ History
 =======
 
 ------------------
+0.6.1 (2019-12-20)
+------------------
+
+* Add ``long_description_content_type`` in ``setup.py`` to avoid a warning in PyPI.
+
+------------------
 0.6.0 (2019-12-20)
 ------------------
 

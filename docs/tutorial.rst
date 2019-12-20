@@ -313,7 +313,11 @@ Add the Example Files
          from .SubPackage2.MyClass2 import MyClass2
          from .SubPackage2.MyClass3 import MyClass3
 
-   #. In the file ``setup.py``, delete the argument of ``find_packages()``.
+   #. In the file ``setup.py``:
+
+      #. Delete the argument of ``find_packages()``.
+      #. After the line ``long_description=readme + '\n\n' + history,``, add
+         ``long_description_content_type='text/x-rst',``
 
 .. _`My Toy Package`: https://github.com/francois-durand/my_toy_package
 
