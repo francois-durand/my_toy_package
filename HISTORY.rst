@@ -3,6 +3,19 @@ History
 =======
 
 ------------------
+0.6.0 (2019-12-20)
+------------------
+
+* You may need to restart your computer after installing git.
+* Cookiecutter now proposes argparse in addition to Click.
+* It is not necessary to add twine to ``requirements_dev.txt`` (cookiecutter now does it).
+* Update to procedure to install travis.
+* It is not necessary anymore to remove mentions of Python 2.7 (cookiecutter has removed them).
+* Remove the line ``modules`` from ``reference.rst``.
+* Add ReadTheDocs theme in ``conf.py``.
+* Create the directory ``build`` before setting up sphinx locally.
+
+------------------
 0.5.0 (2019-12-19)
 ------------------
 

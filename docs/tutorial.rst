@@ -54,7 +54,7 @@ In a terminal (e.g. Anaconda Prompt)::
 Install Git
 ===========
 
-If necessary, install git: https://git-scm.com/downloads .
+If necessary, install git: https://git-scm.com/downloads . You may need to restart your computer.
 
 Generate Your Package
 =====================
@@ -82,8 +82,9 @@ Generate Your Package
          add_pyup_badge [n]: n
          Select command_line_interface:
          1 - Click
-         2 - No command-line interface
-         Choose from 1, 2 [1]: 2
+         2 - Argparse
+         3 - No command-line interface
+         Choose from 1, 2, 3 (1, 2, 3) [1]: 3
          create_author_file [y]:
          Select open_source_license:
          1 - MIT license
@@ -168,13 +169,11 @@ N.B.: if you use a public GitHub repository, using PyPI is free (but not for a p
 Install Dev Requirements
 ========================
 
-Preliminary step 1: if you work on a "small" project, and especially if you do not have a virtual environment, I suggest
+Preliminary step: if you work on a "small" project, and especially if you do not have a virtual environment, I suggest
 that you do not impose the exact versions of the third-party packages used for development.
 
 #. Open the file ``requirements_dev.txt``.
 #. Remove all the mentions of the form ``==x.y.z``.
-
-Preliminary step 2: add a line ``twine`` in ``requirements_dev.txt``.
 
 Anyway, in the PyCharm terminal:
 
@@ -205,19 +204,19 @@ Ensure that Travis Client is installed on your computer.
 
   #. Install Ruby (https://rubyinstaller.org/ ).
   #. Run PyCharm as Administrator.
-  #. In PyCharm terminal, do: ``gem install -V travis --no-rdoc --no-ri``. If it does not work, restart your computer
+  #. In PyCharm terminal, do: ``gem install -V travis``. If it does not work, restart your computer
      and try again.
 
 * Under Debian, run as root::
 
    apt-get update
    apt-get install cookie-cutter ruby ruby-dev gcc
-   gem install -V travis --no-rdoc --no-ri
+   gem install -V travis
 
 * Under Ubuntu 16, run::
 
     sudo apt-get install ruby-dev
-    sudo gem install -V travis --no-rdoc --no-ri
+    sudo gem install -V travis
 
 If you experience troubles installing travis, cf. https://github.com/travis-ci/travis.rb#installation.
 
@@ -237,10 +236,8 @@ Once Travis Client is installed:
 
    (replace with your actual password, in quotation marks).
 
-#. Open the file ``.travis.yml``, which is in the root of your project (you can do so in PyCharm).
-
-   #. Check that ``deploy.password.secure`` is encoded.
-   #. Suppress the line ``- 2.7`` (unless you plan to write code that is compatible with Python 2.7).
+#. Open the file ``.travis.yml``, which is in the root of your project (you can do so in PyCharm). Check that
+   ``deploy.password.secure`` is encoded.
 
 #. If you want that travis runs the doctests of your project, open the file ``tox.ini``. Replace the line
    ``py.test --basetemp={envtmpdir}`` by::
@@ -309,17 +306,14 @@ Add the Example Files
    #. In the file ``MyClass1``, replace ``my_toy_package`` with the name of your package.
    #. Manually modify the copyright statement in files ``MyClass1``, ``MyClass2`` and ``MyClass3``.
    #. In the file ``reference.rst``, replace ``my_toy_package`` with the name of your package.
-   #. In the file ``index.rst``, just after the line ``usage``, add ``reference``.
+   #. In the file ``index.rst``, just after the line ``usage``, replace ``modules`` with ``reference``.
    #. In the file ``__init__.py``, add the following shortcuts::
 
          from .SubPackage1.MyClass1 import MyClass1
          from .SubPackage2.MyClass2 import MyClass2
          from .SubPackage2.MyClass3 import MyClass3
 
-   #. In the file ``setup.py``:
-
-      #. Remove the two lines about Python 2 (unless you plan to write code that is compatible with Python 2).
-      #. Delete the argument of ``find_packages()``.
+   #. In the file ``setup.py``, delete the argument of ``find_packages()``.
 
 .. _`My Toy Package`: https://github.com/francois-durand/my_toy_package
 
@@ -330,8 +324,11 @@ Change the documentation style
 Do this if you want to use Numpy style of documentation.
 
 #. In PyCharm: File → Settings → Tools → Python Integrated Tools → Docstrings → Docstring format → NumPy.
-#. Open the file ``docs\conf.py``. In the declaration of the list of extensions (line of the form
-   ``extensions = [...]``), add the element ``'sphinx.ext.napoleon'`` in the list.
+#. Open the file ``docs\conf.py``.
+
+   #. In the declaration of the list of extensions (line of the form ``extensions = [...]``), add the element
+      ``'sphinx.ext.napoleon'`` to the list.
+   #. Comment the line ``html_theme = 'alabaster'``. Add the line ``html_theme = 'sphinx_rtd_theme'``.
 
 Add a Run Configuration for Doctest
 ===================================
@@ -351,6 +348,7 @@ Add a Run Configuration for Sphinx
 
 In PyCharm:
 
+#. In the root of your project, add a directory named ``build``.
 #. Menu Run → Edit Configurations.
 #. Plus icon (top left) → Python docs → Sphinx task.
 #. Give a name to the configuration, e.g. ``Generate docs``.
