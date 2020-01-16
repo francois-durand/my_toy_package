@@ -181,9 +181,3 @@ class MyClass1:
             2
         """
         return self.a - self.b
-
-
-if __name__ == '__main__':
-    print('We can do some little tests here')
-    test = MyClass1(a=42, b=51)
-    print(test.addition())
