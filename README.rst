@@ -13,6 +13,10 @@ My Toy Package
         :target: https://my-toy-package.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
+.. image:: https://codecov.io/gh/francois-durand/my_toy_package
+        : target: https://codecov.io/gh/francois-durand/my_toy_package
+        : alt:
+
 My Toy Package shows how to create and maintain a package.
 
 * Free software: GNU General Public License v3.
