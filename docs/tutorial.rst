@@ -351,6 +351,17 @@ Do this if you want to use Numpy style of documentation.
       ``'sphinx.ext.napoleon'`` to the list.
    #. Comment the line ``html_theme = 'alabaster'``. Add the line ``html_theme = 'sphinx_rtd_theme'``.
 
+Add the Codecov badge
+=====================
+
+Open the file ``README.rst``. After the other badges, add::
+
+   .. image:: https://codecov.io/gh/francois-durand/my_toy_package/branch/master/graphs/badge.svg
+           :target: https://codecov.io/gh/francois-durand/my_toy_package/branch/master/graphs/badge
+           :alt: Code Coverage
+
+Replace ``francois-durand`` with your user name and ``my_toy_package`` with the name of your package.
+
 Add a Run Configuration for Doctest
 ===================================
 
