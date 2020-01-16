@@ -13,9 +13,9 @@ My Toy Package
         :target: https://my-toy-package.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
-.. image:: https://codecov.io/gh/francois-durand/my_toy_package
-        : target: https://codecov.io/gh/francois-durand/my_toy_package
-        : alt:
+.. image:: https://codecov.io/gh/francois-durand/my_toy_package/branch/master/graphs/badge.svg
+        :target: https://codecov.io/gh/francois-durand/my_toy_package/branch/master/graphs/badge
+        :alt: Code Coverage
 
 My Toy Package shows how to create and maintain a package.
 
