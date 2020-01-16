@@ -9,7 +9,8 @@ In the end, here is how it will work.
 * Your project is on GitHub. When you push modifications to GitHub:
 
     * Travis CI automatically runs all the tests and checks that everything is working on several versions of Python
-      (e.g. 3.5, 3.6, 3.7).
+      (e.g. 3.5, 3.6, 3.7)
+    * Codecov enables you to see what parts of your code are covered or not by your tests.
     * ReadTheDocs automatically generates the documentation and publishes it online.
 
 * When you "tag" a version on GitHub, in other words when you "draft a release": Travis CI not only performs
@@ -36,12 +37,14 @@ Ensure that you have accounts (preferably with the same login) on:
 * ReadTheDocs_,
 * PyPI_,
 * Travis-CI_,
+* Codecov_,
 * Pyup_.
 
 .. _GitHub: https://github.com
 .. _ReadTheDocs: https://readthedocs.org
 .. _PyPI: https://pypi.python.org/pypi
 .. _Travis-CI: https://travis-ci.org
+.. _Codecov: https://codecov.io
 .. _Pyup: https://pyup.io
 
 Install Cookiecutter
@@ -175,6 +178,10 @@ that you do not impose the exact versions of the third-party packages used for d
 #. Open the file ``requirements_dev.txt``.
 #. Remove all the mentions of the form ``==x.y.z``.
 
+If you want to use Codecov, in the file ``requirements_dev.txt``, add a line::
+
+   pytest-cov
+
 Anyway, in the PyCharm terminal:
 
 #. Ensure you are in the directory of your package (e.g. ``D:\GitHub\my_toy_package``).
@@ -236,13 +243,23 @@ Once Travis Client is installed:
 
    (replace with your actual password, in quotation marks).
 
-#. Open the file ``.travis.yml``, which is in the root of your project (you can do so in PyCharm). Check that
-   ``deploy.password.secure`` is encoded.
+#. Open the file ``.travis.yml``, which is in the root of your project (you can do so in PyCharm).
 
-#. If you want that travis runs the doctests of your project, open the file ``tox.ini``. Replace the line
-   ``py.test --basetemp={envtmpdir}`` by::
+   #. Check that ``deploy.password.secure`` is encoded.
+   #. If you want to use Codecov, replace the line ``install: pip install -U tox-travis`` with::
 
-      py.test --basetemp={envtmpdir} --doctest-modules
+         install:
+             - pip install -U tox-travis
+             - pip install codecov
+         after_success:
+             - codecov
+
+#. Open the file ``tox.ini``. Replace the line ``py.test --basetemp={envtmpdir}`` with::
+
+      py.test --basetemp={envtmpdir} --doctest-modules --cov-report=xml --cov=my_toy_package
+
+   where ``my_toy_package`` must be replaced with the name of your own package. The option ``--doctest-modules`` makes
+   travis run the doctests of your project. The other options configure Codecov.
 
 Set Up ReadTheDocs
 ==================
@@ -368,6 +385,7 @@ Check that Everything is Working
 
 #. In PyCharm: commit/push.
 #. In Travis CI: go to Current. The build should be a success (it may take several minutes).
+#. In Codecov: you can navigate in your project to see what parts of the code are covered by the tests.
 #. In ReadTheDocs:
 
    #. In *Compilations*, the doc should be *transmis*.
