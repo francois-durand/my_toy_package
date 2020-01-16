@@ -3,6 +3,14 @@ History
 =======
 
 ------------------
+0.7.0 (2020-01-16)
+------------------
+
+* Configure Codecov and add a Codecov badge.
+* Reach 100% of code coverage.
+* In the tutorial, explain how to configure Codecov.
+
+------------------
 0.6.1 (2019-12-20)
 ------------------
 
