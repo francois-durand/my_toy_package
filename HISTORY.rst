@@ -15,7 +15,7 @@ History
 * You may need to restart your computer after installing git.
 * Cookiecutter now proposes argparse in addition to Click.
 * It is not necessary to add twine to ``requirements_dev.txt`` (cookiecutter now does it).
-* Update to procedure to install travis.
+* Update the procedure to install travis.
 * It is not necessary anymore to remove mentions of Python 2.7 (cookiecutter has removed them).
 * Remove the line ``modules`` from ``reference.rst``.
 * Add ReadTheDocs theme in ``conf.py``.

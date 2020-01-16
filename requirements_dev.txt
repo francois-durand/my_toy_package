@@ -8,4 +8,5 @@ coverage
 Sphinx
 pytest
 pytest-runner
+pytest-cov
 twine
