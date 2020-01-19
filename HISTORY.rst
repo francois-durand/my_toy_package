@@ -3,6 +3,18 @@ History
 =======
 
 ------------------
+0.8.0 (2020-01-19)
+------------------
+
+* Create our own cookiecutter: ``francois-durand/cookiecutter-my_toy_package``.
+* In the tutorial:
+
+  * Remove the steps that are now unnecessary, because they are included in the cookiecutter.
+  * Create a section "Preliminaries" for the steps that are needed only once, not for every package creation.
+  * Reorganize the order of the steps into a more natural course of action.
+  * In PyCharm, change the documentation style to NumPy for all future package creations.
+
+------------------
 0.7.0 (2020-01-16)
 ------------------
 
