@@ -67,12 +67,12 @@ Generate Your Package
 #. In a terminal (e.g. Anaconda Prompt):
 
    #. Go to the parent directory of where you want to put the directory of your package, e.g. ``D:\GitHub\``.
-   #. ``cookiecutter https://github.com/audreyr/cookiecutter-pypackage.git``
+   #. ``cookiecutter https://github.com/francois-durand/cookiecutter-my_toy_package.git``
    #. Answer the questions. Here is an example (some explanations follow)::
 
-         full_name [Audrey Roy Greenfeld]: François Durand
-         email [aroy@alum.mit.edu]: fradurand@gmail.com
-         github_username [audreyr]: francois-durand
+         full_name [F. Durand]: François Durand
+         email [fradurand@gmail.com]: fradurand@gmail.com
+         github_username [francois-durand]: francois-durand
          project_name [Python Boilerplate]: My Toy Package
          project_slug [my_toy_package]:
          project_short_description [Python Boilerplate contains all the boilerplate
@@ -80,35 +80,38 @@ Generate Your Package
          create and maintain a package.
          pypi_username [francois-durand]:
          version [0.1.0]:
-         use_pytest [n]: y
+         use_pytest [y]:
+         use_codecov [y]:
          use_pypi_deployment_with_travis [y]:
-         add_pyup_badge [n]: n
+         add_pyup_badge [n]:
          Select command_line_interface:
-         1 - Click
-         2 - Argparse
-         3 - No command-line interface
-         Choose from 1, 2, 3 (1, 2, 3) [1]: 3
+         1 - No command-line interface
+         2 - Click
+         3 - Argparse
+         Choose from 1, 2, 3 (1, 2, 3) [1]:
          create_author_file [y]:
          Select open_source_license:
-         1 - MIT license
-         2 - BSD license
-         3 - ISC license
-         4 - Apache Software License 2.0
-         5 - GNU General Public License v3
+         1 - GNU General Public License v3
+         2 - MIT license
+         3 - BSD license
+         4 - ISC license
+         5 - Apache Software License 2.0
          6 - Not open source
-         Choose from 1, 2, 3, 4, 5, 6 [1]: 5
+         Choose from 1, 2, 3, 4, 5, 6 (1, 2, 3, 4, 5, 6) [1]:
 
 Some explanations now:
 
 * ``use_pytest``: there are essentially three ways to do unit tests in Python: unittest (the standard solution),
-  pytest (another test package) and doctest (where tests are integrated in the docstrings). If you are new to
+  pytest (the recommended test package) and doctest (where tests are integrated in the docstrings). If you are new to
   testing, I suggest using doctest. But even so, pytest is useful to configure your tests (as we will do a bit
-  later). For this reason, my advice is to answer yes.
+  later). For this reason, in all cases, my advice is to answer yes.
+* ``use_codecov``: you will use Codecov to assess the coverage of your code by your tests.
 * ``use_pypi_deployment_with_travis``: when you will do a *release* in GitHub, Travis will automatically release
   your package on PyPI.
 * ``add_pyup_badge``: a pyup badge will appear in the readme of your package. I suggest to answer no.
-* ``Click``: this allows you to easily call your program with unix-style command, e.g. ``python my_program.py --help``
-  You can answer yes, even if you do not use it for the moment. But personally, I answer no.
+* ``Click``: this allows you to easily call your program with unix-style command, e.g. ``python my_program.py --help``.
+  ``Argparse`` provides the same kind of feature. You can choose either of them, even if you do not use it for the
+  moment. But personally, I answer no.
 * ``create_author_file``: I suggest to answer yes.
 
 Create the PyCharm Project
@@ -132,18 +135,6 @@ a 0.x.x release (which means that its API is not considered stable yet).
    Project Interpreter.)
 #. Click on the gear-shaped icon → Add.
 #. Fill in the form: New environment using Virtualenv. This directory proposed is just fine. Validate.
-
-Configure the gitignore
-=======================
-
-Open the file ``.gitignore`` (you can do so in PyCharm).
-
-#. Add these lines (e.g. at the end of the file)::
-
-     # PyCharm project settings
-     .idea
-
-#. Check that ``venv`` is also excluded, i.e. there should be a line ``venv/`` in the file ``.gitignore``.
 
 Create the GitHub Repo
 ======================
@@ -172,17 +163,7 @@ N.B.: if you use a public GitHub repository, using PyPI is free (but not for a p
 Install Dev Requirements
 ========================
 
-Preliminary step: if you work on a "small" project, and especially if you do not have a virtual environment, I suggest
-that you do not impose the exact versions of the third-party packages used for development.
-
-#. Open the file ``requirements_dev.txt``.
-#. Remove all the mentions of the form ``==x.y.z``.
-
-If you want to use Codecov, in the file ``requirements_dev.txt``, add a line::
-
-   pytest-cov
-
-Anyway, in the PyCharm terminal:
+In the PyCharm terminal:
 
 #. Ensure you are in the directory of your package (e.g. ``D:\GitHub\my_toy_package``).
 #. If you have set a virtual environment, ensure that it is activated: there should be ``(venv)`` at the beginning of
@@ -243,23 +224,8 @@ Once Travis Client is installed:
 
    (replace with your actual password, in quotation marks).
 
-#. Open the file ``.travis.yml``, which is in the root of your project (you can do so in PyCharm).
-
-   #. Check that ``deploy.password.secure`` is encoded.
-   #. If you want to use Codecov, replace the line ``install: pip install -U tox-travis`` with::
-
-         install:
-             - pip install -U tox-travis
-             - pip install codecov
-         after_success:
-             - codecov
-
-#. Open the file ``tox.ini``. Replace the line ``py.test --basetemp={envtmpdir}`` with::
-
-      py.test --basetemp={envtmpdir} --doctest-modules --cov-report=xml --cov=my_toy_package
-
-   where ``my_toy_package`` must be replaced with the name of your own package. The option ``--doctest-modules`` makes
-   travis run the doctests of your project. The other options configure Codecov.
+#. Open the file ``.travis.yml``, which is in the root of your project (you can do so in PyCharm). Check that 
+   ``deploy.password.secure`` is encoded.
 
 Set Up ReadTheDocs
 ==================
@@ -273,10 +239,7 @@ Set Up ReadTheDocs
          https://github.com/francois-durand/my_toy_package
          Git
 
-   #. Admin → Advanced settings.
-
-      #. Check "Installer votre projet dans un virtualenv via setup.py install".
-      #. In "Python interpreter", choose "CPython 3.x".
+   #. Admin → Advanced settings. Check "Installer votre projet dans un virtualenv via setup.py install".
 
 #. In PyCharm, commit/push, i.e.:
 
@@ -306,61 +269,11 @@ inbox. However, for a more ambitious project, it may be useful.
 
 #. In PyCharm, menu VCS → Update project. This does a git update (to get the modifications done by Pyup).
 
-Add the Example Files
-=====================
-
-#. On GitHub website, download `My Toy Package`_.
-#. In a terminal or file explorer:
-
-   #. Move the directories ``my_toy_package\my_toy_package\SubPackage1`` and ``my_toy_package\my_toy_package\SubPackage2``
-      into the corresponding places of your project.
-   #. Move the file ``my_toy_package\docs\reference`` into the corresponding place of your project.
-   #. You can throw away the other files you downloaded.
-
-#. In PyCharm:
-
-   #. Right-click on the directories and files you added. Git → Add.
-   #. In the file ``MyClass1``, replace ``my_toy_package`` with the name of your package.
-   #. Manually modify the copyright statement in files ``MyClass1``, ``MyClass2`` and ``MyClass3``.
-   #. In the file ``reference.rst``, replace ``my_toy_package`` with the name of your package.
-   #. In the file ``index.rst``, just after the line ``usage``, replace ``modules`` with ``reference``.
-   #. In the file ``__init__.py``, add the following shortcuts::
-
-         from .SubPackage1.MyClass1 import MyClass1
-         from .SubPackage2.MyClass2 import MyClass2
-         from .SubPackage2.MyClass3 import MyClass3
-
-   #. In the file ``setup.py``:
-
-      #. Delete the argument of ``find_packages()``.
-      #. After the line ``long_description=readme + '\n\n' + history,``, add
-         ``long_description_content_type='text/x-rst',``
-
-.. _`My Toy Package`: https://github.com/francois-durand/my_toy_package
-
-
 Change the documentation style
 ==============================
 
-Do this if you want to use Numpy style of documentation.
-
-#. In PyCharm: File → Settings → Tools → Python Integrated Tools → Docstrings → Docstring format → NumPy.
-#. Open the file ``docs\conf.py``.
-
-   #. In the declaration of the list of extensions (line of the form ``extensions = [...]``), add the element
-      ``'sphinx.ext.napoleon'`` to the list.
-   #. Comment the line ``html_theme = 'alabaster'``. Add the line ``html_theme = 'sphinx_rtd_theme'``.
-
-Add the Codecov badge
-=====================
-
-Open the file ``README.rst``. After the other badges, add::
-
-   .. image:: https://codecov.io/gh/francois-durand/my_toy_package/branch/master/graphs/badge.svg
-           :target: https://codecov.io/gh/francois-durand/my_toy_package/branch/master/graphs/badge
-           :alt: Code Coverage
-
-Replace ``francois-durand`` with your user name and ``my_toy_package`` with the name of your package.
+Do this if you want to use Numpy style of documentation. In PyCharm: File → Settings → Tools → Python 
+Integrated Tools → Docstrings → Docstring format → NumPy.
 
 Add a Run Configuration for Doctest
 ===================================
@@ -380,7 +293,6 @@ Add a Run Configuration for Sphinx
 
 In PyCharm:
 
-#. In the root of your project, add a directory named ``build``.
 #. Menu Run → Edit Configurations.
 #. Plus icon (top left) → Python docs → Sphinx task.
 #. Give a name to the configuration, e.g. ``Generate docs``.
@@ -394,19 +306,21 @@ Run this configuration: normally, it generates the documentation. To check the r
 Check that Everything is Working
 ================================
 
-#. In PyCharm: commit/push.
-#. In Travis CI: go to Current. The build should be a success (it may take several minutes).
-#. In Codecov: you can navigate in your project to see what parts of the code are covered by the tests.
-#. In ReadTheDocs:
+#. In PyCharm: commit/push if necessary.
+#. In Travis CI website: go to Current. The build should be a success (it may take several minutes).
+#. In Codecov website: you can navigate in your project to see what parts of the code are covered by the tests.
+#. In ReadTheDocs website:
 
    #. In *Compilations*, the doc should be *transmis*.
    #. Open the documentation.
-   #. In the table of contents, click on the first page (e.g. *My Toy Package*). You should have four *badges*:
+   #. In the table of contents, click on the first page (e.g. *My Toy Package*). Depending on your initial
+      choice of options, you should have three to five *badges*:
 
       #. PyPI: invalid (there will be the version number after your first release).
       #. Build: passing.
       #. Docs: passing.
-      #. Pyup: up-to-date.
+      #. Codecov (optional): with a percentage.
+      #. Pyup (optional): up-to-date.
 
    #. In the table of contents, click on *Reference*. You should see the doc of your functions.
 
