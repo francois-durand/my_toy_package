@@ -24,7 +24,7 @@ My Toy Package shows how to create and maintain a package.
 
 The core of this package is a tutorial that gives a checklist of how to create and maintain your Python package,
 especially relying on Cookiecutter, by Audrey Roy Greenfeld, and PyCharm. We also use GitHub, ReadTheDocs, PyPI,
-Travis CI and Pyup.
+Travis CI, Codecov and Pyup.
 
 -------
 Credits
