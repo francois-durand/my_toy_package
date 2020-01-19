@@ -123,19 +123,6 @@ In PyCharm:
 #. In *Location*, fetch the directory of your project, e.g. ``D:\GitHub\my_toy_package``. Validate.
 #. Warning that the directory is not empty: validate.
 
-Create a virtual environment
-============================
-
-A virtual environment is essentially a Python installation dedicated to your project, with its own versions
-of the third-party packages. It ensures that if you reuse this project several months later, it will still work...
-This is not mandatory, but I suggest it especially if you use a third-party package that is still in
-a 0.x.x release (which means that its API is not considered stable yet).
-
-#. Menu File → Settings → Project → Project Interpreter. (For Apple users: PyCharm → Preferences → Project →
-   Project Interpreter.)
-#. Click on the gear-shaped icon → Add.
-#. Fill in the form: New environment using Virtualenv. This directory proposed is just fine. Validate.
-
 Create the GitHub Repo
 ======================
 
@@ -159,6 +146,19 @@ In a browser, you can go to your GitHub account to check that everything is ther
 
 N.B.: if you use a public GitHub repository, using PyPI is free (but not for a private repository).
 
+Create a virtual environment
+============================
+
+A virtual environment is essentially a Python installation dedicated to your project, with its own versions
+of the third-party packages. It ensures that if you reuse this project several months later, it will still work...
+This is not mandatory, but I suggest it especially if you use a third-party package that is still in
+a 0.x.x release (which means that its API is not considered stable yet).
+
+#. Menu File → Settings → Project → Project Interpreter. (For Apple users: PyCharm → Preferences → Project →
+   Project Interpreter.)
+#. Click on the gear-shaped icon → Add.
+#. Fill in the form: New environment using Virtualenv. This directory proposed is just fine. Validate.
+
 Install Dev Requirements
 ========================
 
@@ -181,6 +181,75 @@ In the PyCharm terminal, you should still be in the directory of your package, w
 Do::
 
    python setup.py develop
+
+Change the documentation style
+==============================
+
+Do this if you want to use Numpy style of documentation. In PyCharm: File → Settings → Tools → Python
+Integrated Tools → Docstrings → Docstring format → NumPy.
+
+Add a Run Configuration for Doctest
+===================================
+
+In PyCharm:
+
+#. Menu Run → Edit Configurations.
+#. Add a new configuration by clicking the + button → Python tests → pytest.
+#. Give a name to the configuration, e.g. ``All tests``.
+#. In *Additional Arguments* field, add ``--doctest-modules``.
+#. Ignore the warning and validate.
+
+Run this configuration: normally, it runs all the tests of the project.
+
+Add a Run Configuration for Sphinx
+==================================
+
+In PyCharm:
+
+#. Menu Run → Edit Configurations.
+#. Plus icon (top left) → Python docs → Sphinx task.
+#. Give a name to the configuration, e.g. ``Generate docs``.
+#. Input: the "docs" directory of your project.
+#. Output: the "build" directory of your project.
+#. OK.
+
+Run this configuration: normally, it generates the documentation. To check the result, you can open the file
+``build/index.html``.
+
+Set Up ReadTheDocs
+==================
+
+#. On ReadTheDocs website:
+
+   #. Paramètres → Comptes liés. Check that your GitHub account is listed here.
+   #. Go to “My Projects”. Import a Project → Importer manuellement. Fill in the form and validate, e.g.::
+
+         my_toy_package
+         https://github.com/francois-durand/my_toy_package
+         Git
+
+   #. Admin → Advanced settings. Check "Installer votre projet dans un virtualenv via setup.py install".
+
+Set Up Pyup
+===========
+
+If you work on a "small" project, I suggest that you do not use pyup: it will just generate a lot of spam in your email
+inbox. However, for a more ambitious project, it may be useful.
+
+#. On Pyup website:
+
+   #. Click on the green *Add Repo* button and select the repo you created.
+   #. A pop up appears. Personally, I checked the first item and unchecked the two others.
+
+   Within a few minutes, you will probably receive a pull request in GitHub (and in your email).
+
+#. On GitHub website, open the pull request and:
+
+   #. Merge pull request.
+   #. Accept merge.
+   #. Delete branch.
+
+#. In PyCharm, menu VCS → Update project. This does a git update (to get the modifications done by Pyup).
 
 Set Up Travis CI
 ================
@@ -223,77 +292,8 @@ Once Travis Client is installed:
 
    (replace with your actual password, in quotation marks).
 
-#. Open the file ``.travis.yml``, which is in the root of your project (you can do so in PyCharm). Check that 
+#. Open the file ``.travis.yml``, which is in the root of your project (you can do so in PyCharm). Check that
    ``deploy.password.secure`` is encoded.
-
-Set Up ReadTheDocs
-==================
-
-#. On ReadTheDocs website:
-
-   #. Paramètres → Comptes liés. Check that your GitHub account is listed here.
-   #. Go to “My Projects”. Import a Project → Importer manuellement. Fill in the form and validate, e.g.::
-
-         my_toy_package
-         https://github.com/francois-durand/my_toy_package
-         Git
-
-   #. Admin → Advanced settings. Check "Installer votre projet dans un virtualenv via setup.py install".
-
-Set Up Pyup
-===========
-
-If you work on a "small" project, I suggest that you do not use pyup: it will just generate a lot of spam in your email
-inbox. However, for a more ambitious project, it may be useful.
-
-#. On Pyup website:
-
-   #. Click on the green *Add Repo* button and select the repo you created.
-   #. A pop up appears. Personally, I checked the first item and unchecked the two others.
-
-   Within a few minutes, you will probably receive a pull request in GitHub (and in your email).
-
-#. On GitHub website, open the pull request and:
-
-   #. Merge pull request.
-   #. Accept merge.
-   #. Delete branch.
-
-#. In PyCharm, menu VCS → Update project. This does a git update (to get the modifications done by Pyup).
-
-Change the documentation style
-==============================
-
-Do this if you want to use Numpy style of documentation. In PyCharm: File → Settings → Tools → Python 
-Integrated Tools → Docstrings → Docstring format → NumPy.
-
-Add a Run Configuration for Doctest
-===================================
-
-In PyCharm:
-
-#. Menu Run → Edit Configurations.
-#. Add a new configuration by clicking the + button → Python tests → pytest.
-#. Give a name to the configuration, e.g. ``All tests``.
-#. In *Additional Arguments* field, add ``--doctest-modules``.
-#. Ignore the warning and validate.
-
-Run this configuration: normally, it runs all the tests of the project.
-
-Add a Run Configuration for Sphinx
-==================================
-
-In PyCharm:
-
-#. Menu Run → Edit Configurations.
-#. Plus icon (top left) → Python docs → Sphinx task.
-#. Give a name to the configuration, e.g. ``Generate docs``.
-#. Input: the "docs" directory of your project.
-#. Output: the "build" directory of your project.
-#. OK.
-
-Run this configuration: normally, it generates the documentation. To check the result, you can open the file
-``build/index.html``.
 
 Check that Everything is Working
 ================================
