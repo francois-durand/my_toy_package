@@ -249,8 +249,9 @@ In PyCharm:
 #. Output: the "build" directory of your project.
 #. OK.
 
-Run this configuration: normally, it generates the documentation. To check the result, you can open the file
-``build/index.html``.
+Run this configuration: you should have a warning "Title underline too short". Go to the mentioned file
+and correct the problem. Then run the configuration again: normally, it generates the documentation. To
+check the result, you can open the file ``build/index.html``.
 
 Set Up ReadTheDocs
 ==================
@@ -294,10 +295,10 @@ Once Travis Client is installed:
 #. On Travis website:
 
    #. Login using your Github credentials.
-   #. It may take a few minutes for Travis CI to load up a list of all your GitHub repos. They will be listed with
-      boxes to the left of the repo name, where the boxes have an X in them, meaning it is not connected to Travis CI.
-      Add the public repo to your Travis CI account by clicking the X to switch it “on” in the box next to the
-      ``my_toy_package`` repo. Do not try to follow the other instructions, that will be taken care of next.
+   #. It may take a few minutes for Travis CI to load up a list of all your GitHub repos. If you do not see your
+      new repo, log out and log in again.
+   #. Click on your new repo.
+   #. Click on "Activate repository".
 
 #. In PyCharm terminal, ensure that you are in the directory of your project and::
 
@@ -318,8 +319,9 @@ Check that Everything is Working
    #. Commit → Commit and push.
    #. Push.
 
-#. In Travis CI website: go to Current. The build should be a success (it may take several minutes).
-#. In Codecov website: you can navigate in your project to see what parts of the code are covered by the tests.
+#. In Travis CI website: go to Build History. The build should be a success (it may take several minutes).
+#. In Codecov website: once Travis has finished building, you can navigate in your project to see what parts
+   of the code are covered by the tests.
 #. In ReadTheDocs website:
 
    #. In *Compilations*, the doc should be *transmis*.
