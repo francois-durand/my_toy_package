@@ -155,8 +155,7 @@ In PyCharm:
       Remote name: origin
       Description: My Toy Package shows how to create and maintain a package.
 
-In a browser, you can go to your GitHub account to check that everything is there. If not, do an initial commit in
-PyCharm: VCS → Commit...
+In a browser, you can go to your GitHub account to check that everything is there.
 
 N.B.: if you use a public GitHub repository, using PyPI is free (but not for a private repository).
 
@@ -241,13 +240,6 @@ Set Up ReadTheDocs
 
    #. Admin → Advanced settings. Check "Installer votre projet dans un virtualenv via setup.py install".
 
-#. In PyCharm, commit/push, i.e.:
-
-   #. Menu VCS → Commit.
-   #. Enter a commit message, e.g. ``Initial settings``.
-   #. Commit → Commit and push.
-   #. Push.
-
 Set Up Pyup
 ===========
 
@@ -306,7 +298,13 @@ Run this configuration: normally, it generates the documentation. To check the r
 Check that Everything is Working
 ================================
 
-#. In PyCharm: commit/push if necessary.
+#. In PyCharm: commit/push if necessary, i.e.:
+
+   #. Menu VCS → Commit.
+   #. Enter a commit message.
+   #. Commit → Commit and push.
+   #. Push.
+
 #. In Travis CI website: go to Current. The build should be a success (it may take several minutes).
 #. In Codecov website: you can navigate in your project to see what parts of the code are covered by the tests.
 #. In ReadTheDocs website:
