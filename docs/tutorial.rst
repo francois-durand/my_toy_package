@@ -57,20 +57,20 @@ Install Git
 
 If necessary, install git: https://git-scm.com/downloads . You may need to restart your computer.
 
-Register your GitHub account in PyCharm
-=======================================
-
-#. In PyCharm:
-
-   #. Menu File → Settings → Version Control → GitHub.
-   #. Click on the "+" icon.
-   #. Fill in the form and validate.
-
 Change the documentation style in PyCharm
 =========================================
 
-Do this if you want to use Numpy style of documentation. In the "Welcome to PyCharm" window (before you open a 
+Do this if you want to use Numpy style of documentation. In the "Welcome to PyCharm" window (before you open a
 project): Configure → Settings → Tools → Python Integrated Tools → Docstrings → Docstring format → NumPy.
+
+Register your GitHub account in PyCharm
+=======================================
+
+In PyCharm:
+
+#. Menu File → Settings → Version Control → GitHub.
+#. Click on the "+" icon.
+#. Fill in the form and validate.
 
 Register your GitHub account in ReadTheDocs
 ===========================================
