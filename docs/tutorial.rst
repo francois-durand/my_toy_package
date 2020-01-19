@@ -22,14 +22,12 @@ In the end, here is how it will work.
   that each member of your team know which version is used. PyUp informs you when a new version of these
   third-party packages are released: you receive a pull request in GitHub and you just have to accept it.
 
--------------------
-Create your package
--------------------
-
-This section is adapted from: https://cookiecutter-pypackage.readthedocs.io/en/latest/tutorial.html .
-
+-------------
 Preliminaries
-=============
+-------------
+
+Create accounts on the websites
+===============================
 
 Ensure that you have accounts (preferably with the same login) on:
 
@@ -58,6 +56,55 @@ Install Git
 ===========
 
 If necessary, install git: https://git-scm.com/downloads . You may need to restart your computer.
+
+Register your GitHub account in PyCharm
+=======================================
+
+#. In PyCharm:
+
+   #. Menu File → Settings → Version Control → GitHub.
+   #. Click on the "+" icon.
+   #. Fill in the form and validate.
+
+Change the documentation style in PyCharm
+=========================================
+
+Do this if you want to use Numpy style of documentation. In the "Welcome to PyCharm" window (before you open a 
+project): Configure → Settings → Tools → Python Integrated Tools → Docstrings → Docstring format → NumPy.
+
+Register your GitHub account in ReadTheDocs
+===========================================
+
+On ReadTheDocs website: Paramètres → Comptes liés. Check that your GitHub account is listed here.
+
+Install Travis Client on your computer
+======================================
+
+* Under Windows:
+
+  #. Install Ruby (https://rubyinstaller.org/ ).
+  #. Run PyCharm as Administrator.
+  #. In PyCharm terminal, do: ``gem install -V travis``. If it does not work, restart your computer
+     and try again.
+
+* Under Debian, run as root::
+
+   apt-get update
+   apt-get install cookie-cutter ruby ruby-dev gcc
+   gem install -V travis
+
+* Under Ubuntu 16, run::
+
+    sudo apt-get install ruby-dev
+    sudo gem install -V travis
+
+If you experience troubles installing travis, cf. https://github.com/travis-ci/travis.rb#installation.
+
+-------------------
+Create your package
+-------------------
+
+This section is adapted from: https://cookiecutter-pypackage.readthedocs.io/en/latest/tutorial.html .
 
 Generate Your Package
 =====================
@@ -128,12 +175,6 @@ Create the GitHub Repo
 
 In PyCharm:
 
-#. If it is not already done, register your GitHub account in PyCharm:
-
-   #. Menu File → Settings → Version Control → GitHub.
-   #. Click on the "+" icon.
-   #. Fill in the form and validate.
-
 #. Menu VCS → Import into version control → Share project on GitHub.
 
 #. Fill in the form and validate, e.g.::
@@ -182,12 +223,6 @@ Do::
 
    python setup.py develop
 
-Change the documentation style
-==============================
-
-Do this if you want to use Numpy style of documentation. In PyCharm: File → Settings → Tools → Python
-Integrated Tools → Docstrings → Docstring format → NumPy.
-
 Add a Run Configuration for Doctest
 ===================================
 
@@ -221,7 +256,6 @@ Set Up ReadTheDocs
 
 #. On ReadTheDocs website:
 
-   #. Paramètres → Comptes liés. Check that your GitHub account is listed here.
    #. Go to “My Projects”. Import a Project → Importer manuellement. Fill in the form and validate, e.g.::
 
          my_toy_package
@@ -253,28 +287,6 @@ inbox. However, for a more ambitious project, it may be useful.
 
 Set Up Travis CI
 ================
-
-Ensure that Travis Client is installed on your computer.
-
-* Under Windows:
-
-  #. Install Ruby (https://rubyinstaller.org/ ).
-  #. Run PyCharm as Administrator.
-  #. In PyCharm terminal, do: ``gem install -V travis``. If it does not work, restart your computer
-     and try again.
-
-* Under Debian, run as root::
-
-   apt-get update
-   apt-get install cookie-cutter ruby ruby-dev gcc
-   gem install -V travis
-
-* Under Ubuntu 16, run::
-
-    sudo apt-get install ruby-dev
-    sudo gem install -V travis
-
-If you experience troubles installing travis, cf. https://github.com/travis-ci/travis.rb#installation.
 
 Once Travis Client is installed:
 
