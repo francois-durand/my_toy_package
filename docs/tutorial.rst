@@ -241,6 +241,7 @@ Add a Run Configuration for Sphinx
 
 In PyCharm:
 
+#. In the root of your project, add a directory named ``build``.
 #. Menu Run → Edit Configurations.
 #. Plus icon (top left) → Python docs → Sphinx task.
 #. Give a name to the configuration, e.g. ``Generate docs``.
