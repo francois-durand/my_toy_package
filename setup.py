@@ -49,6 +49,6 @@ setup(
     test_suite='tests',
     tests_require=test_requirements,
     url='https://github.com/francois-durand/my_toy_package',
-    version='0.8.0',
+    version='0.9.0',
     zip_safe=False,
 )
