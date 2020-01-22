@@ -3,6 +3,13 @@ History
 =======
 
 ------------------
+0.9.0 (2020-01-22)
+------------------
+
+* The cookiecutter now features a pytest configuration in ``tox.ini`` and a file ``.coveragerc``.
+* As a consequence, it is not necessary anymore to add ``--doctest-modules`` when configuring the tests in PyCharm.
+
+------------------
 0.8.0 (2020-01-19)
 ------------------
 
