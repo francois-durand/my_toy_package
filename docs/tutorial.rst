@@ -289,8 +289,6 @@ inbox. However, for a more ambitious project, it may be useful.
 Set Up Travis CI
 ================
 
-Once Travis Client is installed:
-
 #. On Travis website:
 
    #. Login using your Github credentials.
