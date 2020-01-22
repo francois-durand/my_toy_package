@@ -231,7 +231,6 @@ In PyCharm:
 #. Menu Run → Edit Configurations.
 #. Add a new configuration by clicking the + button → Python tests → pytest.
 #. Give a name to the configuration, e.g. ``All tests``.
-#. In *Additional Arguments* field, add ``--doctest-modules``.
 #. Ignore the warning and validate.
 
 Run this configuration: normally, it runs all the tests of the project.
