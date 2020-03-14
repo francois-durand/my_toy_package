@@ -1,21 +1,7 @@
-Welcome to My Toy Package's documentation!
-==========================================
+==============
+My Toy Package
+==============
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+My Toy Package is dead, long live `Package Helper`_!
 
-   readme
-   tutorial
-   installation
-   usage
-   reference
-   contributing
-   authors
-   history
-
-Indices and tables
-==================
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+.. _Package Helper: https://package-helper.readthedocs.io/
